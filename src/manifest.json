@@ -14,5 +14,21 @@
       "id": "finefind@leonsdepot.de",
       "strict_min_version": "115.14.0esr"
     }
-  }
+  },
+  "permissions": [
+    "activeTab"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["js/highlighter.js", "js/main.js"],
+      "css": ["css/highlighter.css"]
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["img/ring.svg"],
+      "matches": ["*://*/*"]
+    }
+  ]
 }

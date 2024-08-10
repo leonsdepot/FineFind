@@ -1,0 +1,16 @@
+/*
+ *  Name: FineFind
+ *  Author: LeonsDepot (Leon Watermann)
+ *  Url: https://github.com/leonsdepot/FineFind
+ */
+
+#finefind-indicator {
+  height: 10rem;
+  width: 10rem;
+  position: fixed;
+  pointer-events: none;
+  background-repeat: no-repeat;
+  background-size: 0rem 0rem;
+  background-position: center center;
+  box-sizing: border-box;
+}
