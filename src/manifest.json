@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "FineFind",
+  "version": "1.0.0",
+  "description": "",
+  "author": "LeonsDepot (Leon Watermann)",
+  "homepage_url": "https://github.com/leonsdepot/FineFind",
+  "icons": {
+    "48": "img/logo.svg",
+    "96": "img/logo.svg"
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "finefind@leonsdepot.de",
+      "strict_min_version": "115.14.0esr"
+    }
+  }
+}
