@@ -17,3 +17,6 @@
 - [Content scripts](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts)
 - [activeTab permission](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/permissions#activetab_permission)
 - [JavaScript Classes](https://www.w3schools.com/js/js_classes.asp)
+- [Element: focus event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event)
+- [Element: blur event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
+- [Element: keydown event](https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event)
