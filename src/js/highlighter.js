@@ -8,8 +8,8 @@ class Highlighter {
   }
 
   moveTo( x, y ) {
-    this.ring.left = ( x - ( this.ring.offsetWidth / 2 ) ) + 'px';
-    this.ring.top = ( y - ( this.ring.offsetHeight / 2 ) ) + 'px';
+    this.ring.style.left = ( x - ( this.ring.offsetWidth / 2 ) ) + 'px';
+    this.ring.style.top = ( y - ( this.ring.offsetHeight / 2 ) ) + 'px';
   }
 
   animate() {
