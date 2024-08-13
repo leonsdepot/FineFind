@@ -20,3 +20,5 @@
 - [Element: focus event](https://developer.mozilla.org/en-US/docs/Web/API/Element/focus_event)
 - [Element: blur event](https://developer.mozilla.org/en-US/docs/Web/API/Element/blur_event)
 - [Element: keydown event](https://developer.mozilla.org/en-US/docs/Web/API/Element/keydown_event)
+- [Internationalization](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Internationalization)
+- [Locale-specific message reference](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/i18n/Locale-Specific_Message_reference)
