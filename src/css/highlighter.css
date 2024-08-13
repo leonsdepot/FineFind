@@ -10,7 +10,7 @@
   position: fixed;
   pointer-events: none;
   background-repeat: no-repeat;
-  background-size: 0rem 0rem;
+  background-size: 0%;
   background-position: center center;
   box-sizing: border-box;
   z-index: 99;

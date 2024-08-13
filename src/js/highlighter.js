@@ -15,8 +15,8 @@ class Highlighter {
   animate() {
     this.ring.animate(
       [
-        { backgroundSize: '10rem 10rem' },
-        { backgroundSize: '0rem 0rem' }
+        { backgroundSize: '100%' },
+        { backgroundSize: '0%' }
       ],
       {
         duration: 1000,
