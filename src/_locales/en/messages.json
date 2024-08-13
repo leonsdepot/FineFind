@@ -1,0 +1,10 @@
+{
+  "extensionName": {
+    "message": "FineFind",
+    "description": "Name of the extension."
+  },
+  "extensionDescription": {
+    "message": "Enhances your browser with an animation that makes Ctrl+F results more noticeable!",
+    "description": "Description of the extension."
+  }
+}

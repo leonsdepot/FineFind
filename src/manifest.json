@@ -1,14 +1,15 @@
 {
   "manifest_version": 3,
-  "name": "FineFind",
+  "name": "__MSG_extensionName__",
   "version": "1.0.0",
-  "description": "",
+  "description": "__MSG_extensionDescription__",
   "author": "LeonsDepot (Leon Watermann)",
   "homepage_url": "https://github.com/leonsdepot/FineFind",
   "icons": {
     "48": "img/logo.svg",
     "96": "img/logo.svg"
   },
+  "default_locale": "en",
   "browser_specific_settings": {
     "gecko": {
       "id": "finefind@leonsdepot.de",
