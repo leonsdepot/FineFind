@@ -22,13 +22,18 @@ document.addEventListener( 'keydown', ( event ) => {
     })
 
     const highlighter = new Highlighter( browser.runtime.getURL( 'img/ring.svg' ) );
+    const checker = new Checker();
     document.addEventListener( 'selectionchange', () => {
       if ( isUserSelect ) {
         return;
       }
-      
-      const select = window.getSelection();
-      const pos = select.getRangeAt( 0 ).getClientRects()[0];
+
+      const range = window.getSelection().getRangeAt( 0 );
+      const pos = range.getClientRects()[0];
+
+      if ( checker.positionOutsideDoc( pos.left, pos.top ) ) {
+        console.warn( browser.i18n.getMessage( 'error_rangeOutsideDoc' ) );
+      }
 
       highlighter.moveTo( ( pos.left + ( pos.width / 2 ) ), ( pos.top + ( pos.height / 2 ) ) );
       highlighter.animate();

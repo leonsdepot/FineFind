@@ -6,5 +6,9 @@
   "extensionDescription": {
     "message": "Enhances your browser with an animation that makes Ctrl+F results more noticeable!",
     "description": "Description of the extension."
+  },
+  "error_rangeOutsideDoc": {
+    "message": "Result is off page!",
+    "description": "This is related to a problem when the selection is outside the page and therefore invisible."
   }
 }
