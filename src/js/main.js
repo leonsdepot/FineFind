@@ -1,9 +1,9 @@
-let keyHookEnabled = true;
+let isCtrlFPressed = false;
 let isUserSelect = false;
 
 document.addEventListener( 'keydown', ( event ) => {
-  if ( ( event.ctrlKey || event.metaKey ) && event.key === 'f' && keyHookEnabled ) {
-    keyHookEnabled = false;
+  if ( ( event.ctrlKey || event.metaKey ) && event.key === 'f' && !isCtrlFPressed ) {
+    isCtrlFPressed = true;
     
     document.addEventListener( 'focus', () => {
       isUserSelect = true;
