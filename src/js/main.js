@@ -30,7 +30,7 @@ document.addEventListener( 'keydown', ( event ) => {
       const range = window.getSelection().getRangeAt( 0 );
       const pos = range.getClientRects()[0];
 
-      if ( checkUtils.positionOutsideDoc( pos.left, pos.top ) ) {
+      if ( CheckUtils.positionOutsideDoc( pos.left, pos.top ) ) {
         console.warn( browser.i18n.getMessage( 'error_rangeOutsideDoc' ) );
       }
 
