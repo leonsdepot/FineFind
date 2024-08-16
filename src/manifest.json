@@ -13,7 +13,7 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "finefind@leonsdepot.de",
-      "strict_min_version": "115.14.0esr"
+      "strict_min_version": "109.0"
     }
   },
   "permissions": [
