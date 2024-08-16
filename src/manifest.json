@@ -22,7 +22,7 @@
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["js/checker.js", "js/highlighter.js", "js/main.js"],
+      "js": ["js/checkUtils.js", "js/highlighter.js", "js/main.js"],
       "css": ["css/highlighter.css"]
     }
   ],

@@ -22,7 +22,6 @@ document.addEventListener( 'keydown', ( event ) => {
     })
 
     const highlighter = new Highlighter( browser.runtime.getURL( 'img/ring.svg' ) );
-    const checker = new Checker();
     document.addEventListener( 'selectionchange', () => {
       if ( isUserSelect ) {
         return;
@@ -31,7 +30,7 @@ document.addEventListener( 'keydown', ( event ) => {
       const range = window.getSelection().getRangeAt( 0 );
       const pos = range.getClientRects()[0];
 
-      if ( checker.positionOutsideDoc( pos.left, pos.top ) ) {
+      if ( checkUtils.positionOutsideDoc( pos.left, pos.top ) ) {
         console.warn( browser.i18n.getMessage( 'error_rangeOutsideDoc' ) );
       }
 
