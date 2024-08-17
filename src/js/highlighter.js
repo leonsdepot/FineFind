@@ -3,8 +3,10 @@ class Highlighter {
     this.ring = document.createElement( 'div' );
     this.ring.id = 'finefind-indicator';
     this.ring.style.backgroundImage = 'url(' + path + ')';
-    
-    document.body.appendChild( this.ring );
+  }
+
+  getElement() {
+    return this.ring;
   }
 
   moveTo( x, y ) {

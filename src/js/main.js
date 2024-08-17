@@ -22,6 +22,7 @@ document.addEventListener( 'keydown', ( event ) => {
     })
 
     const highlighter = new Highlighter( browser.runtime.getURL( 'img/ring.svg' ) );
+    document.body.appendChild( highlighter.getElement() );
     document.addEventListener( 'selectionchange', () => {
       if ( isUserSelect ) {
         return;
