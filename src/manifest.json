@@ -22,13 +22,13 @@
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["js/checkUtils.js", "js/highlighter.js", "js/main.js"],
-      "css": ["css/highlighter.css"]
+      "js": ["js/checkUtils.js", "js/highlighter.js", "js/notifier.js", "js/main.js"],
+      "css": ["css/highlighter.css", "css/notifier.css"]
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["img/ring.svg"],
+      "resources": ["img/ring.svg", "img/logo.svg"],
       "matches": ["*://*/*"]
     }
   ]

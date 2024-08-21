@@ -23,6 +23,9 @@ document.addEventListener( 'keydown', ( event ) => {
 
     const highlighter = new Highlighter( browser.runtime.getURL( 'img/ring.svg' ) );
     document.body.appendChild( highlighter.getElement() );
+    const notifier = new Notifier( browser.runtime.getURL( 'img/logo.svg' ) );
+    document.body.appendChild( notifier.getElement() );
+    
     document.addEventListener( 'selectionchange', () => {
       if ( isUserSelect ) {
         return;
@@ -32,7 +35,7 @@ document.addEventListener( 'keydown', ( event ) => {
       const pos = range.getClientRects()[0];
 
       if ( CheckUtils.positionOutsideDoc( pos.left, pos.top ) ) {
-        console.warn( browser.i18n.getMessage( 'error_rangeOutsideDoc' ) );
+        notifier.show( browser.i18n.getMessage( 'error_rangeOutsideDoc' ) );
       }
 
       highlighter.moveTo( ( pos.left + ( pos.width / 2 ) ), ( pos.top + ( pos.height / 2 ) ) );
