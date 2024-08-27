@@ -2,6 +2,7 @@ class Highlighter {
   constructor( path ) {
     this.ring = document.createElement( 'div' );
     this.ring.id = 'finefind-indicator';
+    this.ring.part = this.ring.id;
     this.ring.style.backgroundImage = 'url(' + path + ')';
   }
 

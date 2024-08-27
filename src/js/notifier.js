@@ -1,11 +1,16 @@
 class Notifier {
   constructor( path = false ) {
     this.msgText = document.createElement( 'p' );
+    this.msgText.id = 'finefind-notifier-text';
+    this.msgText.part = this.msgText.id;
     
     this.msgBox = document.createElement( 'div' );
     this.msgBox.id = 'finefind-notifier';
+    this.msgBox.part = this.msgBox.id;
     if ( path ) {
       const icon = document.createElement( 'div' );
+      icon.id = 'finefind-notifier-icon';
+      icon.part = icon.id;
       icon.style.backgroundImage = 'url(' + path + ')';
       
       this.msgBox.appendChild( icon );

@@ -4,7 +4,7 @@
  *  Url: https://github.com/leonsdepot/FineFind
  */
 
-#finefind-indicator {
+::part(finefind-indicator), #finefind-indicator {
   height: 10rem;
   width: 10rem;
   position: fixed;

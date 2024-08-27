@@ -1,6 +1,17 @@
+const createShadowGroup = ( elements, id = 'finefind-content' ) => {
+  const host = document.createElement( 'div' );
+  host.id = id;
+
+  const shadow = host.attachShadow( { mode: 'open' } );
+  elements.forEach( element => {
+    shadow.appendChild( element );
+  })
+
+  return host;
+}
+
 let isCtrlFPressed = false;
 let isUserSelect = false;
-
 document.addEventListener( 'keydown', ( event ) => {
   if ( ( event.ctrlKey || event.metaKey ) && event.key === 'f' && !isCtrlFPressed ) {
     isCtrlFPressed = true;
@@ -22,9 +33,10 @@ document.addEventListener( 'keydown', ( event ) => {
     })
 
     const highlighter = new Highlighter( browser.runtime.getURL( 'img/ring.svg' ) );
-    document.body.appendChild( highlighter.getElement() );
     const notifier = new Notifier( browser.runtime.getURL( 'img/logo.svg' ) );
-    document.body.appendChild( notifier.getElement() );
+    document.body.appendChild( 
+      createShadowGroup( [highlighter.getElement(), notifier.getElement()] ) 
+    );
     
     document.addEventListener( 'selectionchange', () => {
       if ( isUserSelect ) {

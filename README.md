@@ -29,3 +29,8 @@
 - [Controlling ratios of flex items along the main axis](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_flexible_box_layout/Controlling_ratios_of_flex_items_along_the_main_axis)
 - [Positioning](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Positioning)
 - [box-shadow](https://developer.mozilla.org/en-US/docs/Web/CSS/box-shadow)
+- [Using shadow DOM](https://developer.mozilla.org/en-US/docs/Web/API/Web_components/Using_shadow_DOM#applying_styles_inside_the_shadow_dom)
+- [CSS shadow parts](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_shadow_parts)
+- [::part()](https://developer.mozilla.org/en-US/docs/Web/CSS/::part)
+- [Is it possible to stop inheriting CSS within shadowDom from HTML tag?](https://stackoverflow.com/questions/59197323/is-it-possible-to-stop-inheriting-css-within-shadowdom-from-html-tag)
+- [Why does this globally defined css rule affect styling inside of the shadow DOM?](https://stackoverflow.com/questions/67432617/why-does-this-globally-defined-css-rule-affect-styling-inside-of-the-shadow-dom)

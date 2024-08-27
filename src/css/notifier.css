@@ -4,7 +4,7 @@
  *  Url: https://github.com/leonsdepot/FineFind
  */
 
-#finefind-notifier {
+::part(finefind-notifier), #finefind-notifier {
   display: flex;
   align-items: center;
   gap: 1.2rem;
@@ -21,14 +21,14 @@
   pointer-events: none;
 }
 
-#finefind-notifier > div {
+::part(finefind-notifier-icon), #finefind-notifier-icon {
   height: 2rem;
   width: 2rem;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
-#finefind-notifier > p {
+::part(finefind-notifier-text), #finefind-notifier-text {
   font-family: sans-serif;
   font-size: 1.4rem;
 }
