@@ -3,6 +3,16 @@ class Notifier {
     this.msgText = document.createElement( 'p' );
     this.msgText.id = 'finefind-notifier-text';
     this.msgText.part = this.msgText.id;
+
+    this.subText = document.createElement( 'p' );
+    this.subText.id = 'finefind-notifier-subtext';
+    this.subText.part = this.subText.id;
+
+    this.textBox = document.createElement( 'div' );
+    this.textBox.id = 'finefind-notifier-textbox';
+    this.textBox.part = this.textBox.id;
+    this.textBox.appendChild( this.msgText );
+    this.textBox.appendChild( this.subText );
     
     this.msgBox = document.createElement( 'div' );
     this.msgBox.id = 'finefind-notifier';
@@ -15,18 +25,22 @@ class Notifier {
       
       this.msgBox.appendChild( icon );
     }
-    this.msgBox.appendChild( this.msgText );
+    this.msgBox.appendChild( this.textBox );
   }
 
   getElement() {
     return this.msgBox;
   }
 
-  show( text ) {
-    while ( this.msgText.firstChild ) {
-      this.msgText.removeChild( this.msgText.firstChild );
+  show( text, subText = '' ) {
+    for ( const element of this.textBox.children ) {
+      while ( element.firstChild ) {
+        element.removeChild( element.firstChild );
+      }
     }
+
     this.msgText.appendChild( document.createTextNode( text ) );
+    this.subText.appendChild( document.createTextNode( subText ) );
 
     this.animate();
   }

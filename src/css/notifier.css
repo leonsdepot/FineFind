@@ -28,7 +28,18 @@
   background-repeat: no-repeat;
 }
 
+::part(finefind-notifier-textbox), #finefind-notifier-textbox {
+  display: flex;
+  flex-direction: column;
+}
+
 ::part(finefind-notifier-text), #finefind-notifier-text {
   font-family: sans-serif;
   font-size: 1.4rem;
+}
+
+::part(finefind-notifier-subtext), #finefind-notifier-subtext {
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  font-style: italic;
 }
