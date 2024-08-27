@@ -10,6 +10,10 @@ const createShadowGroup = ( elements, id = 'finefind-content' ) => {
   return host;
 }
 
+const isPositionOutsideDoc = ( x, y ) => {
+  return x < 0 || y < 0 || x > document.documentElement.scrollWidth || y > document.documentElement.scrollHeight;
+}
+
 let isCtrlFPressed = false;
 let isUserSelect = false;
 document.addEventListener( 'keydown', ( event ) => {
@@ -46,7 +50,7 @@ document.addEventListener( 'keydown', ( event ) => {
       const range = window.getSelection().getRangeAt( 0 );
       const pos = range.getClientRects()[0];
 
-      if ( CheckUtils.positionOutsideDoc( pos.left, pos.top ) ) {
+      if ( isPositionOutsideDoc( pos.left, pos.top ) ) {
         notifier.show( browser.i18n.getMessage( 'error_rangeOutsideDoc' ) );
       }
 
