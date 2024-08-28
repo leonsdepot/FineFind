@@ -1,19 +1,9 @@
 class Notifier {
   constructor( path = false ) {
-    this.msgText = document.createElement( 'p' );
-    this.msgText.id = 'finefind-notifier-text';
-    this.msgText.part = this.msgText.id;
-
-    this.subText = document.createElement( 'p' );
-    this.subText.id = 'finefind-notifier-subtext';
-    this.subText.part = this.subText.id;
-
     this.textBox = document.createElement( 'div' );
     this.textBox.id = 'finefind-notifier-textbox';
     this.textBox.part = this.textBox.id;
-    this.textBox.appendChild( this.msgText );
-    this.textBox.appendChild( this.subText );
-    
+
     this.msgBox = document.createElement( 'div' );
     this.msgBox.id = 'finefind-notifier';
     this.msgBox.part = this.msgBox.id;
@@ -28,19 +18,30 @@ class Notifier {
     this.msgBox.appendChild( this.textBox );
   }
 
+  #createTextElement( text, id = false ) {
+    const p = document.createElement( 'p' );
+    if ( id ) {
+      p.id = id;
+      p.part = id;
+    }
+    p.appendChild( document.createTextNode( text ) );
+
+    return p;
+  }
+
   getElement() {
     return this.msgBox;
   }
 
-  show( text, subText = '' ) {
-    for ( const element of this.textBox.children ) {
-      while ( element.firstChild ) {
-        element.removeChild( element.firstChild );
-      }
+  show( text, subText = false ) {
+    while ( this.textBox.firstChild ) {
+      this.textBox.firstChild.remove();
     }
 
-    this.msgText.appendChild( document.createTextNode( text ) );
-    this.subText.appendChild( document.createTextNode( subText ) );
+    this.textBox.appendChild( this.#createTextElement( text, 'finefind-notifier-text' ) );
+    if ( subText ) {
+      this.textBox.appendChild( this.#createTextElement( subText, 'finefind-notifier-subtext' ) );
+    }
 
     this.animate();
   }
