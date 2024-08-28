@@ -20,6 +20,17 @@ document.addEventListener( 'keydown', ( event ) => {
   if ( ( event.ctrlKey || event.metaKey ) && event.key === 'f' && !isCtrlFPressed ) {
     isCtrlFPressed = true;
     
+    const highlighter = new Highlighter( browser.runtime.getURL( 'img/ring.svg' ) );
+    const notifier = new Notifier( browser.runtime.getURL( 'img/logo.svg' ) );
+    document.body.appendChild(
+      createShadowGroup( [highlighter.getElement(), notifier.getElement()] )
+    );
+
+    notifier.show(
+      browser.i18n.getMessage( 'isActiveReminder' ),
+      browser.i18n.getMessage( 'isActiveReminder_subText' )
+    );
+    
     document.addEventListener( 'focus', () => {
       isUserSelect = true;
     })
@@ -35,12 +46,6 @@ document.addEventListener( 'keydown', ( event ) => {
     document.addEventListener( 'blur', () => {
       isUserSelect = false;
     })
-
-    const highlighter = new Highlighter( browser.runtime.getURL( 'img/ring.svg' ) );
-    const notifier = new Notifier( browser.runtime.getURL( 'img/logo.svg' ) );
-    document.body.appendChild( 
-      createShadowGroup( [highlighter.getElement(), notifier.getElement()] ) 
-    );
     
     document.addEventListener( 'selectionchange', () => {
       if ( isUserSelect ) {
