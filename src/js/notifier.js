@@ -1,28 +1,29 @@
 class Notifier {
   constructor( path = false ) {
     this.textBox = document.createElement( 'div' );
-    this.textBox.id = 'finefind-notifier-textbox';
-    this.textBox.part = this.textBox.id;
+    this.#setIdAndPart( this.textBox, 'finefind-notifier-textbox' );
 
     this.msgBox = document.createElement( 'div' );
-    this.msgBox.id = 'finefind-notifier';
-    this.msgBox.part = this.msgBox.id;
+    this.#setIdAndPart( this.msgBox, 'finefind-notifier' );
     if ( path ) {
       const icon = document.createElement( 'div' );
-      icon.id = 'finefind-notifier-icon';
-      icon.part = icon.id;
       icon.style.backgroundImage = 'url(' + path + ')';
+      this.#setIdAndPart( icon, 'finefind-notifier-icon' );
       
       this.msgBox.appendChild( icon );
     }
     this.msgBox.appendChild( this.textBox );
   }
 
+  #setIdAndPart( element, id ) {
+    element.setAttribute( 'id', id );
+    element.setAttribute( 'part', id );
+  }
+
   #createTextElement( text, id = false ) {
     const p = document.createElement( 'p' );
     if ( id ) {
-      p.id = id;
-      p.part = id;
+      this.#setIdAndPart( p, id );
     }
     p.appendChild( document.createTextNode( text ) );
 
