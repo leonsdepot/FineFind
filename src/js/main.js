@@ -10,6 +10,15 @@ const createShadowGroup = ( elements, id = 'finefind-content' ) => {
   return host;
 }
 
+const getSelectionPosition = () => {
+  const position = window.getSelection().getRangeAt( 0 ).getClientRects()[0];
+
+  return {
+    x: position.left + ( position.width / 2 ),
+    y: position.top + ( position.height / 2 )
+  }
+}
+
 const isPositionOutsideDoc = ( x, y ) => {
   return x < 0 || y < 0 || x > document.documentElement.scrollWidth || y > document.documentElement.scrollHeight;
 }
@@ -52,14 +61,13 @@ document.addEventListener( 'keydown', ( event ) => {
         return;
       }
 
-      const range = window.getSelection().getRangeAt( 0 );
-      const pos = range.getClientRects()[0];
+      const position = getSelectionPosition();
 
-      if ( isPositionOutsideDoc( pos.left, pos.top ) ) {
+      if ( isPositionOutsideDoc( position.x, position.y ) ) {
         notifier.show( browser.i18n.getMessage( 'error_rangeOutsideDoc' ) );
       }
 
-      highlighter.moveTo( ( pos.left + ( pos.width / 2 ) ), ( pos.top + ( pos.height / 2 ) ) );
+      highlighter.moveTo( position.x, position.y );
       highlighter.animate();
     })
   }
