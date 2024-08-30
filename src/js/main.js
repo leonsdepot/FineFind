@@ -1,6 +1,6 @@
-const createShadowGroup = ( elements, id = 'finefind-content' ) => {
+const createShadowGroup = ( elements ) => {
   const host = document.createElement( 'div' );
-  host.setAttribute( 'id', id );
+  host.style.all = 'initial';
 
   const shadow = host.attachShadow( { mode: 'open' } );
   elements.forEach( element => {
