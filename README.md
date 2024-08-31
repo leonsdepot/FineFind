@@ -36,3 +36,4 @@
 - [Why does this globally defined css rule affect styling inside of the shadow DOM?](https://stackoverflow.com/questions/67432617/why-does-this-globally-defined-css-rule-affect-styling-inside-of-the-shadow-dom)
 - [Element: setAttribute() method](https://developer.mozilla.org/en-US/docs/Web/API/Element/setAttribute)
 - [Security best practices](https://extensionworkshop.com/documentation/develop/build-a-secure-extension/)
+- [ShadowRoot: mode property](https://developer.mozilla.org/en-US/docs/Web/API/ShadowRoot/mode)

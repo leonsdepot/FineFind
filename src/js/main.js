@@ -2,7 +2,7 @@ const createShadowGroup = ( elements ) => {
   const host = document.createElement( 'div' );
   host.style.all = 'initial';
 
-  const shadow = host.attachShadow( { mode: 'open' } );
+  const shadow = host.attachShadow( { mode: 'closed' } );
   elements.forEach( element => {
     shadow.appendChild( element );
   })
