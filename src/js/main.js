@@ -10,8 +10,8 @@ const createShadowGroup = ( elements ) => {
   return host;
 }
 
-const getSelectionPosition = () => {
-  const position = window.getSelection().getRangeAt( 0 ).getClientRects()[0];
+const getRangePosition = ( range ) => {
+  const position = range.getClientRects()[0];
 
   return {
     x: position.left + ( position.width / 2 ),
@@ -19,10 +19,8 @@ const getSelectionPosition = () => {
   }
 }
 
-const isInsideIframe = () => {
-  const selectionRange = window.getSelection().getRangeAt( 0 );
-
-  return selectionRange.collapsed;
+const isInsideIframe = ( range ) => {
+  return range.collapsed;
 }
 
 const isPositionOutsideDoc = ( x, y ) => {
@@ -67,9 +65,10 @@ document.addEventListener( 'keydown', ( event ) => {
         return;
       }
 
-      const position = getSelectionPosition();
+      const selectionRange = window.getSelection().getRangeAt( 0 );
+      const position = getRangePosition( selectionRange );
 
-      if ( isInsideIframe() ) {
+      if ( isInsideIframe( selectionRange ) ) {
         notifier.show(
           browser.i18n.getMessage( 'error_isInsideIframe' ),
           browser.i18n.getMessage( 'error_isInsideIframe_subText' )
