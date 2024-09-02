@@ -78,9 +78,10 @@ document.addEventListener( 'keydown', ( event ) => {
       else if ( isPositionOutsideDoc( position.x, position.y ) ) {
         notifier.show( browser.i18n.getMessage( 'error_rangeOutsideDoc' ) );
       }
-
-      highlighter.moveTo( position.x, position.y );
-      highlighter.animate();
+      else {
+        highlighter.moveTo( position.x, position.y );
+        highlighter.animate();
+      }
     })
   }
 })
