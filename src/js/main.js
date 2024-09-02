@@ -19,6 +19,12 @@ const getSelectionPosition = () => {
   }
 }
 
+const isInsideIframe = () => {
+  const selectionRange = window.getSelection().getRangeAt( 0 );
+
+  return selectionRange.collapsed;
+}
+
 const isPositionOutsideDoc = ( x, y ) => {
   return x < 0 || y < 0 || x > document.documentElement.scrollWidth || y > document.documentElement.scrollHeight;
 }
@@ -63,7 +69,13 @@ document.addEventListener( 'keydown', ( event ) => {
 
       const position = getSelectionPosition();
 
-      if ( isPositionOutsideDoc( position.x, position.y ) ) {
+      if ( isInsideIframe() ) {
+        notifier.show(
+          browser.i18n.getMessage( 'error_isInsideIframe' ),
+          browser.i18n.getMessage( 'error_isInsideIframe_subText' )
+        );
+      }
+      else if ( isPositionOutsideDoc( position.x, position.y ) ) {
         notifier.show( browser.i18n.getMessage( 'error_rangeOutsideDoc' ) );
       }
 
