@@ -1,0 +1,111 @@
+/*
+ *  Name: FineFind - Options
+ *  Author: LeonsDepot (Leon Watermann)
+ *  Url: https://github.com/leonsdepot/FineFind
+ */
+
+:root {
+  --blue: #008ea4;
+  --white: white;
+  --light-gray: lightgray;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #23222b;
+    --bg-color-contrast: white;
+    --color: white;
+    --color-contrast: #23222b;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg-color: white;
+    --bg-color-contrast: #23222b;
+    --color: #23222b;
+    --color-contrast: white;
+  }
+}
+
+
+/* Elements */
+
+* {
+  margin: 0rem;
+  padding: 0rem;
+  box-sizing: border-box;
+}
+
+html, body {
+  padding: 0.2rem 0rem;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--color);
+  font-family: sans-serif;
+  font-size: 1rem;
+}
+
+form {
+  display: grid;
+  grid-template-columns: auto auto;
+	gap: 0.44rem 1.4rem;
+}
+
+label {
+  align-self: center;
+}
+
+input {
+  height: 1.4rem;
+  padding: 0rem 0.4rem;
+  font-size: 0.8rem;
+  border-radius: 0.2rem;
+}
+
+input[type=checkbox] {
+  aspect-ratio: 1 / 1;
+  align-self: end;
+}
+
+input[type=number] {
+  padding-right: 0rem;
+}
+
+h1 { font-size: 1.2rem }
+h2 { font-size: 1.1rem; font-weight: bold; }
+
+.banner {
+  padding: 1rem;
+  background-color: var(--blue);
+  border-radius: 0.33rem;
+  color: var(--white);
+}
+
+.bubbles {
+  display: flex;
+  gap: 1rem;
+}
+
+.bubbles > * {
+  padding: 1rem;
+  border-radius: 2rem;
+  background-color: var(--bg-color);
+  color: var(--bg-color-contrast);
+  text-decoration: none;
+}
+
+.bubbles > *:hover {
+  background-color: var(--light-gray);
+  transition: 0.6s;
+}
+
+
+/* Spacing */
+
+h1, h2 { margin-top: 1.4rem; margin-bottom: 0.8rem; }
+div, form, p { margin-bottom: 1rem; }
+*:last-child { margin-bottom: 0rem; }
+*:first-child { margin-top: 0rem; }
