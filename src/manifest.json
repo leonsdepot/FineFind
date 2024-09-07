@@ -26,7 +26,7 @@
   "content_scripts": [
     {
       "matches": ["*://*/*"],
-      "js": ["js/highlighter.js", "js/notifier.js", "js/main.js"],
+      "js": ["js/utils.js", "js/highlighter.js", "js/notifier.js", "js/main.js"],
       "css": ["css/highlighter.css", "css/notifier.css"]
     }
   ],

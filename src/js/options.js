@@ -8,31 +8,29 @@ if ( debug ) {
   }, 10000 )
 }
 
-browser.storage.sync.get()
-.then( settings => {
+Utils.restoreOptions()
+.then( storageSettings => {
   document.querySelectorAll( 'form.settingsBox > input' ).forEach( input => {
     const key = input.getAttribute( 'name' );
 
-    if ( settings[key] ) {
+    if ( storageSettings[key] ) {
       if ( input.getAttribute( 'type' ) == 'checkbox' ) {
-        input.checked = settings[key];
+        input.checked = storageSettings[key].value;
       }
       else {
-        input.value = settings[key];
+        input.value = storageSettings[key].value;
       }
     }
 
     input.addEventListener( 'change', () => {
-      const values = {};
-
       if ( input.getAttribute( 'type' ) == 'checkbox' ) {
-        values[key] = input.checked;
+        storageSettings[key].value = input.checked;
       }
       else {
-        values[key] = input.value;
+        storageSettings[key].value = input.value;
       }
 
-      browser.storage.sync.set( values );
+      Utils.saveOptions( storageSettings );
     })
   })
 })
