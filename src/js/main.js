@@ -39,10 +39,18 @@ document.addEventListener( 'keydown', ( event ) => {
       createShadowGroup( [highlighter.getElement(), notifier.getElement()] )
     );
 
-    notifier.show(
-      browser.i18n.getMessage( 'isActiveReminder' ),
-      browser.i18n.getMessage( 'isActiveReminder_subText' )
-    );
+    let settings = Utils.defaultSettings.settings;
+    Utils.restoreOptions()
+    .then( storageSettings => {
+      settings = storageSettings;
+
+      if ( settings.showBanner.value ) {
+        notifier.show(
+          browser.i18n.getMessage( 'isActiveReminder' ),
+          browser.i18n.getMessage( 'isActiveReminder_subText' )
+        );
+      }
+    })
     
     document.addEventListener( 'focus', () => {
       isUserSelect = true;
@@ -79,7 +87,7 @@ document.addEventListener( 'keydown', ( event ) => {
       }
       else {
         highlighter.moveTo( position.x, position.y );
-        highlighter.animate();
+        highlighter.animate( settings.highlighterDuration.value );
       }
     })
   }
