@@ -26,6 +26,9 @@ Utils.restoreOptions()
       if ( input.getAttribute( 'type' ) == 'checkbox' ) {
         storageSettings[key].value = input.checked;
       }
+      else if ( input.getAttribute( 'type' ) == 'number' ) {
+        storageSettings[key].value = Number( input.value );
+      }
       else {
         storageSettings[key].value = input.value;
       }
