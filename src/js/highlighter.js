@@ -15,14 +15,14 @@ class Highlighter {
     this.ring.style.top = ( y - ( this.ring.offsetHeight / 2 ) ) + 'px';
   }
 
-  animate() {
+  animate( milliseconds = 1000 ) {
     this.ring.animate(
       [
         { backgroundSize: '100%' },
         { backgroundSize: '0%' }
       ],
       {
-        duration: 1000,
+        duration: milliseconds,
         easing: 'cubic-bezier(0.33, 1, 0.68, 1)'
       }
     )
