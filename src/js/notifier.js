@@ -13,6 +13,22 @@ class Notifier {
       this.msgBox.appendChild( icon );
     }
     this.msgBox.appendChild( this.textBox );
+
+    this.msgBox.addEventListener( 'mouseenter', event => {
+      event.stopPropagation();
+
+      this.msgBox.getAnimations( { subtree: true } ).forEach( animation => {
+        animation.pause();
+      });
+    })
+
+    this.msgBox.addEventListener( 'mouseleave', event => {
+      event.stopPropagation();
+
+      this.msgBox.getAnimations( { subtree: true } ).forEach( animation => {
+        animation.play();
+      });
+    })
   }
 
   #setIdAndPart( element, id ) {
