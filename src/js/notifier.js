@@ -3,6 +3,25 @@ class Notifier {
     this.textBox = document.createElement( 'div' );
     this.#setIdAndPart( this.textBox, 'finefind-notifier-textbox' );
 
+    this.circleLeftFill = document.createElement( 'div' );
+    this.#setIdAndPart( this.circleLeftFill, 'finefind-circle-left-fill' );
+
+    const circleLeft = document.createElement( 'div' );
+    this.#setIdAndPart( circleLeft, 'finefind-circle-left' );
+    circleLeft.appendChild( this.circleLeftFill );
+
+    this.circleRightFill = document.createElement( 'div' );
+    this.#setIdAndPart( this.circleRightFill, 'finefind-circle-right-fill' );
+
+    const circleRight = document.createElement( 'div' );
+    this.#setIdAndPart( circleRight, 'finefind-circle-right' );
+    circleRight.appendChild( this.circleRightFill );
+
+    const circleLoading = document.createElement( 'div' );
+    this.#setIdAndPart( circleLoading, 'finefind-circle-loading' );
+    circleLoading.appendChild( circleLeft );
+    circleLoading.appendChild( circleRight );
+
     this.msgBox = document.createElement( 'div' );
     this.#setIdAndPart( this.msgBox, 'finefind-notifier' );
     if ( path ) {
@@ -13,12 +32,15 @@ class Notifier {
       this.msgBox.appendChild( icon );
     }
     this.msgBox.appendChild( this.textBox );
+    this.msgBox.appendChild( circleLoading );
 
     this.msgBox.addEventListener( 'mouseenter', event => {
       event.stopPropagation();
 
       this.msgBox.getAnimations( { subtree: true } ).forEach( animation => {
-        animation.pause();
+        if ( animation.playState == 'running' ) {
+          animation.pause();
+        }
       });
     })
 
@@ -26,7 +48,9 @@ class Notifier {
       event.stopPropagation();
 
       this.msgBox.getAnimations( { subtree: true } ).forEach( animation => {
-        animation.play();
+        if ( animation.playState == 'paused' ) {
+          animation.play();
+        }
       });
     })
   }
@@ -64,29 +88,48 @@ class Notifier {
   }
 
   animate( milliseconds = 3000 ) {
-    this.msgBox.animate(
-      [
-        {
-          visibility: 'visible',
-          left: '-' + this.msgBox.offsetWidth + 'px'
-        },
-        {
-          left: '2.2rem',
-          offset: 0.3
-        },
-        {
-          left: '2.2rem',
-          offset: 0.95
-        },
-        {
-          visibility: 'hidden',
-          left: '-' + this.msgBox.offsetWidth + 'px',
-        }
-      ],
+    const halfMilliseconds = ( milliseconds / 2 );
+
+    const slideIn = [
       {
-        duration: milliseconds,
-        easing: 'cubic-bezier(0.33, 1, 0.68, 1)'
+        visibility: 'visible',
+        left: '-' + this.msgBox.offsetWidth + 'px'
+      },
+      {
+        left: '2.2rem',
+        offset: 0.3
+      },
+      {
+        left: '2.2rem',
+        offset: 0.95
+      },
+      {
+        visibility: 'hidden',
+        left: '-' + this.msgBox.offsetWidth + 'px',
       }
+    ]
+    const rotate = [
+      {
+        transform: 'rotate(0deg)'
+      },
+      {
+        transform: 'rotate(180deg)'
+      }
+    ]
+
+    this.msgBox.animate(
+      slideIn,
+      { duration: milliseconds, easing: 'cubic-bezier(0.33, 1, 0.68, 1)' }
+    )
+
+    this.circleLeftFill.animate(
+      rotate,
+      { duration: halfMilliseconds, fill: 'both' }
+    )
+
+    this.circleRightFill.animate(
+      rotate,
+      { duration: halfMilliseconds, fill: 'both', delay: halfMilliseconds }
     )
   }
 }

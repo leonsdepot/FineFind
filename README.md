@@ -59,3 +59,8 @@
 - [Animation: pause() method](https://developer.mozilla.org/en-US/docs/Web/API/Animation/pause)
 - [Animation: play() method](https://developer.mozilla.org/en-US/docs/Web/API/Animation/play)
 - [user-select](https://developer.mozilla.org/en-US/docs/Web/CSS/user-select)
+- [clip-path](https://developer.mozilla.org/en-US/docs/Web/CSS/clip-path)
+- [Circle Fill Animation](https://codepen.io/kbeherec/pen/EEZYqv)
+- [Element: animate() method](https://developer.mozilla.org/en-US/docs/Web/API/Element/animate)
+- [KeyframeEffect: KeyframeEffect() constructor](https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect/KeyframeEffect#parameters)
+- [Animation: playState property](https://developer.mozilla.org/en-US/docs/Web/API/Animation/playState)
