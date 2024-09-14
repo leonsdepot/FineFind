@@ -53,6 +53,80 @@ class Notifier {
         }
       });
     })
+
+    this.isAnimationReady = false;
+  }
+
+  #initAnimations() {
+    const slideIn = [
+      {
+        left: '-' + this.msgBox.offsetWidth + 'px'
+      },
+      {
+        visibility: 'visible',
+        left: '2.2rem',
+      }
+    ]
+    const slideOut = [
+      {
+        left: '2.2rem',
+      },
+      {
+        left: '-' + this.msgBox.offsetWidth + 'px'
+      }
+    ]
+    const rotate = [
+      {
+        transform: 'rotate(0deg)'
+      },
+      {
+        transform: 'rotate(180deg)'
+      }
+    ]
+
+    this.msgBoxIn = new Animation(
+      new KeyframeEffect(
+        this.msgBox,
+        slideIn,
+        { duration: 450, easing: 'cubic-bezier(0.33, 1, 0.68, 1)', fill: 'both' }
+      )
+    )
+
+    this.msgBoxOut = new Animation(
+      new KeyframeEffect(
+        this.msgBox,
+        slideOut,
+        { duration: 450, easing: 'cubic-bezier(0.33, 1, 0.68, 1)', fill: 'both' }
+      )
+    )
+
+    this.circle1 = new Animation(
+      new KeyframeEffect(
+        this.circleLeftFill,
+        rotate,
+        { duration: 10000, fill: 'both' }
+      )
+    )
+
+    this.circle2 = new Animation(
+      new KeyframeEffect(
+        this.circleRightFill,
+        rotate,
+        { duration: 10000, fill: 'both' }
+      )
+    )
+
+    this.msgBoxIn.addEventListener( 'finish', () => {
+      this.circle1.play();
+    })
+
+    this.circle1.addEventListener( 'finish', () => {
+      this.circle2.play();
+    })
+
+    this.circle2.addEventListener( 'finish', () => {
+      this.msgBoxOut.play();
+    })
   }
 
   #setIdAndPart( element, id ) {
@@ -87,49 +161,15 @@ class Notifier {
     this.animate();
   }
 
-  animate( milliseconds = 3000 ) {
-    const halfMilliseconds = ( milliseconds / 2 );
+  animate( milliseconds = 4000 ) {
+    if ( ! this.isAnimationReady ) {
+      this.isAnimationReady = true;
+      this.#initAnimations();
+    }
 
-    const slideIn = [
-      {
-        visibility: 'visible',
-        left: '-' + this.msgBox.offsetWidth + 'px'
-      },
-      {
-        left: '2.2rem',
-        offset: 0.3
-      },
-      {
-        left: '2.2rem',
-        offset: 0.95
-      },
-      {
-        visibility: 'hidden',
-        left: '-' + this.msgBox.offsetWidth + 'px',
-      }
-    ]
-    const rotate = [
-      {
-        transform: 'rotate(0deg)'
-      },
-      {
-        transform: 'rotate(180deg)'
-      }
-    ]
+    this.circle1.effect.updateTiming( { duration: ( milliseconds / 2 ) } );
+    this.circle2.effect.updateTiming( { duration: ( milliseconds / 2 ) } );
 
-    this.msgBox.animate(
-      slideIn,
-      { duration: milliseconds, easing: 'cubic-bezier(0.33, 1, 0.68, 1)' }
-    )
-
-    this.circleLeftFill.animate(
-      rotate,
-      { duration: halfMilliseconds, fill: 'both' }
-    )
-
-    this.circleRightFill.animate(
-      rotate,
-      { duration: halfMilliseconds, fill: 'both', delay: halfMilliseconds }
-    )
+    this.msgBoxIn.play();
   }
 }
