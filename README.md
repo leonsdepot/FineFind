@@ -64,3 +64,5 @@
 - [Element: animate() method](https://developer.mozilla.org/en-US/docs/Web/API/Element/animate)
 - [KeyframeEffect: KeyframeEffect() constructor](https://developer.mozilla.org/en-US/docs/Web/API/KeyframeEffect/KeyframeEffect#parameters)
 - [Animation: playState property](https://developer.mozilla.org/en-US/docs/Web/API/Animation/playState)
+- [AnimationEffect: updateTiming() method](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect/updateTiming)
+- [Animation: finish event](https://developer.mozilla.org/en-US/docs/Web/API/Animation/finish_event)
