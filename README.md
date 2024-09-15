@@ -66,3 +66,5 @@
 - [Animation: playState property](https://developer.mozilla.org/en-US/docs/Web/API/Animation/playState)
 - [AnimationEffect: updateTiming() method](https://developer.mozilla.org/en-US/docs/Web/API/AnimationEffect/updateTiming)
 - [Animation: finish event](https://developer.mozilla.org/en-US/docs/Web/API/Animation/finish_event)
+- [Animation: cancel() method](https://developer.mozilla.org/en-US/docs/Web/API/Animation/cancel)
+- [translateX()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateX)
