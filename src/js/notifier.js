@@ -60,19 +60,16 @@ class Notifier {
   #initAnimations() {
     const slideIn = [
       {
-        left: '-' + this.msgBox.offsetWidth + 'px'
+        transform: 'translateX(-100%)'
       },
       {
         visibility: 'visible',
-        left: '2.2rem',
+        transform: 'translateX(2.2rem)'
       }
     ]
     const slideOut = [
       {
-        left: '2.2rem',
-      },
-      {
-        left: '-' + this.msgBox.offsetWidth + 'px'
+        transform: 'translateX(-100%)'
       }
     ]
     const rotate = [
@@ -165,6 +162,11 @@ class Notifier {
     if ( ! this.isAnimationReady ) {
       this.isAnimationReady = true;
       this.#initAnimations();
+    }
+    else {
+      this.msgBox.getAnimations( { subtree: true } ).forEach( animation => {
+        animation.cancel();
+      })
     }
 
     this.circle1.effect.updateTiming( { duration: ( milliseconds / 2 ) } );
