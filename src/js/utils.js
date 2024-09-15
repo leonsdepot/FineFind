@@ -1,8 +1,8 @@
 class Utils {
   static defaultSettings = {
     settings: {
-      showBanner: { value: true, type: 'checkbox' },
-      highlighterDuration: { value: 1000, type: 'number' }
+      showBanner: { value: true },
+      highlighterDuration: { value: 1000 }
     }
   }
 

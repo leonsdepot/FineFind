@@ -10,16 +10,18 @@ if ( debug ) {
 
 Utils.restoreOptions()
 .then( storageSettings => {
-  document.querySelectorAll( 'form.settingsBox > input' ).forEach( input => {
+  document.querySelectorAll( 'input' ).forEach( input => {
     const key = input.getAttribute( 'name' );
 
-    if ( storageSettings[key] ) {
-      if ( input.getAttribute( 'type' ) == 'checkbox' ) {
-        input.checked = storageSettings[key].value;
-      }
-      else {
-        input.value = storageSettings[key].value;
-      }
+    if ( ! storageSettings[key] ) {
+      return
+    }
+
+    if ( input.getAttribute( 'type' ) == 'checkbox' ) {
+      input.checked = storageSettings[key].value;
+    }
+    else {
+      input.value = storageSettings[key].value;
     }
 
     input.addEventListener( 'change', () => {
