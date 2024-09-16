@@ -8,6 +8,12 @@ if ( debug ) {
   }, 10000 )
 }
 
+document.querySelectorAll( 'form' ).forEach( form => {
+  form.addEventListener( 'submit', e => {
+    e.preventDefault();
+  })
+})
+
 Utils.restoreOptions()
 .then( storageSettings => {
   document.querySelectorAll( 'input' ).forEach( input => {

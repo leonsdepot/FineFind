@@ -68,3 +68,5 @@
 - [Animation: finish event](https://developer.mozilla.org/en-US/docs/Web/API/Animation/finish_event)
 - [Animation: cancel() method](https://developer.mozilla.org/en-US/docs/Web/API/Animation/cancel)
 - [translateX()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateX)
+- [HTMLFormElement: submit event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event)
+- [Event: preventDefault() method](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault)
