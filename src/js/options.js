@@ -14,6 +14,15 @@ document.querySelectorAll( 'form' ).forEach( form => {
   })
 })
 
+document.querySelectorAll( '[data-i18n]' ).forEach( element => {
+  const key = element.getAttribute( 'data-i18n' );
+
+  const text = Utils.getLocalizedString( 'setting_' + key );
+  if ( text ) {
+    element.appendChild( document.createTextNode( text ) );
+  }
+})
+
 Utils.restoreOptions()
 .then( storageSettings => {
   document.querySelectorAll( 'input' ).forEach( input => {

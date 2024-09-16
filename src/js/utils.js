@@ -30,4 +30,8 @@ class Utils {
       return storageItems.settings;
     })
   }
+
+  static getLocalizedString( key ) {
+    return browser.i18n.getMessage( key );
+  }
 }

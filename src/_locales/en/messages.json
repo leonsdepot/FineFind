@@ -26,5 +26,33 @@
   "error_rangeOutsideDoc": {
     "message": "Result is off page!",
     "description": "This is related to a problem when the selection is outside the page and therefore invisible."
+  },
+  "setting_thanks": {
+    "message": "Thank you for using FineFind!",
+    "description": "This is the text for the information box on the settings page."
+  },
+  "setting_moreInformation": {
+    "message": "Visit these pages for more information:",
+    "description": "This is the additional text for the information box on the settings page."
+  },
+  "setting_website": {
+    "message": "Website",
+    "description": "This is the text for a button on the settings page."
+  },
+  "setting_issues": {
+    "message": "Issues",
+    "description": "This is the text for a button on the settings page."
+  },
+  "setting_behavior": {
+    "message": "Behavior",
+    "description": "This is the title for a section on the settings page."
+  },
+  "setting_showBanner": {
+    "message": "Show banner when activated",
+    "description": "This is the text for an option label on the settings page. The user can decide whether they receive an 'is active' notification or not."
+  },
+  "setting_highlighterDuration": {
+    "message": "Highlighter animation duration (ms)",
+    "description": "This is the text for an option label on the settings page. Users can set their preferred animation time for the ring animation."
   }
 }
