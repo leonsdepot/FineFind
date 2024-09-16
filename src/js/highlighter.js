@@ -15,6 +15,13 @@ class Highlighter {
     this.ring.style.top = ( y - ( this.ring.offsetHeight / 2 ) ) + 'px';
   }
 
+  updateColor( hueDegree, brightness = 1, saturation = 1 ) {
+    this.ring.style.filter =
+      'hue-rotate(' + hueDegree + 'deg) ' +
+      'brightness(' + brightness + ') ' +
+      'saturate(' + saturation + ')';
+  }
+
   animate( milliseconds = 1000 ) {
     this.ring.animate(
       [

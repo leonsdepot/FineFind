@@ -70,3 +70,6 @@
 - [translateX()](https://developer.mozilla.org/en-US/docs/Web/CSS/transform-function/translateX)
 - [HTMLFormElement: submit event](https://developer.mozilla.org/en-US/docs/Web/API/HTMLFormElement/submit_event)
 - [Event: preventDefault() method](https://developer.mozilla.org/en-US/docs/Web/API/Event/preventDefault)
+- [hue-rotate()](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/hue-rotate)
+- [brightness()](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness)
+- [saturate()](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturate)
