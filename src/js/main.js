@@ -50,6 +50,12 @@ document.addEventListener( 'keydown', ( event ) => {
           browser.i18n.getMessage( 'isActiveReminder_subText' )
         );
       }
+
+      highlighter.updateColor(
+        settings.highlighterHueDegree.value,
+        settings.highlighterBrightness.value,
+        settings.highlighterSaturation.value
+      );
     })
     
     document.addEventListener( 'focus', () => {

@@ -54,5 +54,21 @@
   "setting_highlighterDuration": {
     "message": "Highlighter animation duration (ms)",
     "description": "This is the text for an option label on the settings page. Users can set their preferred animation time for the ring animation."
+  },
+  "setting_appearance": {
+    "message": "Appearance",
+    "description": "This is the title for a section on the settings page."
+  },
+  "setting_highlighterHueDegree": {
+    "message": "Color Shift (Hue)",
+    "description": "This is the text for an option label on the settings page."
+  },
+  "setting_highlighterBrightness": {
+    "message": "Brightness",
+    "description": "This is the text for an option label on the settings page."
+  },
+  "setting_highlighterSaturation": {
+    "message": "Saturation",
+    "description": "This is the text for an option label on the settings page."
   }
 }

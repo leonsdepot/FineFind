@@ -39,6 +39,19 @@ Utils.restoreOptions()
       input.value = storageSettings[key].value;
     }
 
+    const output = document.querySelector( 'output[for=' + key + ']' );
+    if ( output ) {
+      output.value = storageSettings[key].value;
+
+      input.addEventListener( 'input', () => {
+        while( output.firstChild ) {
+          output.firstChild.remove();
+        }
+
+        output.appendChild( document.createTextNode( input.value ) );
+      })
+    }
+
     input.addEventListener( 'change', () => {
       if ( input.getAttribute( 'type' ) == 'checkbox' ) {
         storageSettings[key].value = input.checked;

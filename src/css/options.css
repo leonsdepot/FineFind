@@ -54,6 +54,16 @@ form {
 	gap: 0.44rem 1.4rem;
 }
 
+form > div.rangeAndValue {
+  display: grid;
+  grid-template-columns: auto 3rem;
+}
+
+form > div.rangeAndValue > output {
+  display: flex;
+  justify-content: flex-end;
+}
+
 label {
   align-self: center;
 }
@@ -106,6 +116,6 @@ h2 { font-size: 1.1rem; font-weight: bold; }
 /* Spacing */
 
 h1, h2 { margin-top: 1.4rem; margin-bottom: 0.8rem; }
-div, form, p { margin-bottom: 1rem; }
+form, p, .banner { margin-bottom: 1rem; }
 *:last-child { margin-bottom: 0rem; }
 *:first-child { margin-top: 0rem; }
