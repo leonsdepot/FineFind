@@ -54,6 +54,10 @@ form {
 	gap: 0.44rem 1.4rem;
 }
 
+form.--compact {
+  grid-template-columns: max-content auto;
+}
+
 form > div.rangeAndValue {
   display: grid;
   grid-template-columns: auto 3rem;
@@ -110,6 +114,24 @@ h2 { font-size: 1.1rem; font-weight: bold; }
 .bubbles > *:hover {
   background-color: var(--light-gray);
   transition: 0.6s;
+}
+
+.previewBox {
+  display: grid;
+  grid-template-columns: 4rem auto;
+  gap: 0.44rem 1.4rem;
+}
+
+#finefind-indicatorBox {
+  display: flex;
+  flex-direction: column;
+}
+
+#finefind-indicator {
+  flex: 1;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }
 
 

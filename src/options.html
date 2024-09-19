@@ -22,23 +22,27 @@
       <input type="number" id="highlighterDuration" name="highlighterDuration" min="500">
     </form>
     <h2 data-i18n="appearance"></h2>
-    <form>
-      <label for="highlighterHueDegree" data-i18n="highlighterHueDegree"></label>
-      <div class="rangeAndValue">
-        <input type="range" id="highlighterHueDegree" name="highlighterHueDegree" min="0" max="360" step="1">
-        <output for="highlighterHueDegree"></output>
-      </div>
-      <label for="highlighterBrightness" data-i18n="highlighterBrightness"></label>
-      <div class="rangeAndValue">
-        <input type="range" id="highlighterBrightness" name="highlighterBrightness" min="0" max="2" step="0.01">
-        <output for="highlighterBrightness"></output>
-      </div>
-      <label for="highlighterSaturation" data-i18n="highlighterSaturation"></label>
-      <div class="rangeAndValue">
-        <input type="range" id="highlighterSaturation" name="highlighterSaturation" min="0" max="2" step="0.01">
-        <output for="highlighterSaturation"></output>
-      </div>
-    </form>
+    <div class="previewBox">
+      <div id="finefind-indicatorBox"></div>
+      <form class="--compact">
+        <label for="highlighterHueDegree" data-i18n="highlighterHueDegree"></label>
+        <div class="rangeAndValue">
+          <input type="range" id="highlighterHueDegree" name="highlighterHueDegree" min="0" max="360" step="1">
+          <output for="highlighterHueDegree"></output>
+        </div>
+        <label for="highlighterBrightness" data-i18n="highlighterBrightness"></label>
+        <div class="rangeAndValue">
+          <input type="range" id="highlighterBrightness" name="highlighterBrightness" min="0" max="2" step="0.1">
+          <output for="highlighterBrightness"></output>
+        </div>
+        <label for="highlighterSaturation" data-i18n="highlighterSaturation"></label>
+        <div class="rangeAndValue">
+          <input type="range" id="highlighterSaturation" name="highlighterSaturation" min="0" max="2" step="0.1">
+          <output for="highlighterSaturation"></output>
+        </div>
+      </form>
+    </div>
+    <script src="js/highlighter.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/options.js"></script>
   </body>

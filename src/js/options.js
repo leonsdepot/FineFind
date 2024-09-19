@@ -67,3 +67,22 @@ Utils.restoreOptions()
     })
   })
 })
+.then( () => {
+  const higlighter = new Highlighter( '../img/ring.svg' );
+  const previewBox = document.querySelector( '#finefind-indicatorBox' );
+  previewBox.prepend( higlighter.getElement() );
+
+  const previewControls = document.querySelectorAll(
+    '#highlighterHueDegree, #highlighterBrightness, #highlighterSaturation'
+  );
+  previewControls.forEach( control => {
+    control.addEventListener( 'input', () => {
+      higlighter.updateColor(
+        previewControls[0].value,
+        previewControls[1].value,
+        previewControls[2].value
+      );
+    })
+  })
+  previewControls[0].dispatchEvent( new Event( 'input' ) );
+})
