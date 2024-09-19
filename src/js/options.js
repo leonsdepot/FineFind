@@ -86,3 +86,16 @@ Utils.restoreOptions()
   })
   previewControls[0].dispatchEvent( new Event( 'input' ) );
 })
+.then( () => {
+  const reset = document.querySelector( '#reset' );
+  reset.addEventListener( 'click', () => {
+    document.querySelectorAll( 'input, button' ).forEach( element => {
+      element.disabled = true;
+    })
+
+    Utils.resetOptions()
+    .then( () => {
+      window.location.reload();
+    })
+  })
+})

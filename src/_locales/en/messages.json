@@ -70,5 +70,9 @@
   "setting_highlighterSaturation": {
     "message": "Saturation",
     "description": "This is the text for an option label on the settings page."
+  },
+  "setting_reset": {
+    "message": "Reset all",
+    "description": "This text is for an action button on the settings page. It will delete everything after confirmation."
   }
 }

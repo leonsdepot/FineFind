@@ -73,3 +73,6 @@
 - [hue-rotate()](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/hue-rotate)
 - [brightness()](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/brightness)
 - [saturate()](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/saturate)
+- [HTMLSelectElement: disabled property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/disabled)
+- [StorageArea.remove()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove)
+- [Location: reload() method](https://developer.mozilla.org/en-US/docs/Web/API/Location/reload)
