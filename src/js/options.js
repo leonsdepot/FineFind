@@ -89,6 +89,10 @@ Utils.restoreOptions()
 .then( () => {
   const reset = document.querySelector( '#reset' );
   reset.addEventListener( 'click', () => {
+    if ( ! confirm( Utils.getLocalizedString( 'setting_resetConfirm' ) ) ) {
+      return
+    }
+
     document.querySelectorAll( 'input, button' ).forEach( element => {
       element.disabled = true;
     })

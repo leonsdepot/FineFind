@@ -74,5 +74,9 @@
   "setting_reset": {
     "message": "Reset all",
     "description": "This text is for an action button on the settings page. It will delete everything after confirmation."
+  },
+  "setting_resetConfirm": {
+    "message": "Are you sure you want to reset all settings? This action cannot be undone.",
+    "description": "This text asks the user if they really want to delete all settings after pressing the reset button."
   }
 }
