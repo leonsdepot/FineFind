@@ -38,6 +38,10 @@ class Utils {
     return browser.storage.sync.remove( 'settings' );
   }
 
+  static getAllStorageData() {
+    return browser.storage.sync.get()
+  }
+
   static getLocalizedString( key ) {
     return browser.i18n.getMessage( key );
   }

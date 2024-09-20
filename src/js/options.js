@@ -1,13 +1,3 @@
-const debug = false;
-if ( debug ) {
-  setInterval( () => {
-    browser.storage.sync.get()
-    .then( value => {
-      console.log( value );
-    })
-  }, 10000 )
-}
-
 document.querySelectorAll( 'form' ).forEach( form => {
   form.addEventListener( 'submit', e => {
     e.preventDefault();
@@ -21,6 +11,14 @@ document.querySelectorAll( '[data-i18n]' ).forEach( element => {
   if ( text ) {
     element.appendChild( document.createTextNode( text ) );
   }
+})
+
+const debug = document.querySelector( '#debug' );
+debug.addEventListener( 'click', () => {
+  Utils.getAllStorageData()
+  .then( storageData => {
+    console.log( storageData );
+  })
 })
 
 Utils.restoreOptions()
