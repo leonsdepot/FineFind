@@ -78,6 +78,7 @@ input {
   padding: 0rem 0.4rem;
   font-size: 0.8rem;
   border-radius: 0.2rem;
+  border: 0.1rem solid var(--light-gray);
 }
 
 input[type=checkbox] {
