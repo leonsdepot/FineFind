@@ -5,13 +5,14 @@
  */
 
 ::part(finefind-indicator), #finefind-indicator {
-  height: 10rem;
-  width: 10rem;
+  height: 10em;
+  width: 10em;
+  font-size: calc( 8px + 1vh );
   position: fixed;
   pointer-events: none;
   background-repeat: no-repeat;
   background-size: 0%;
   background-position: center center;
   box-sizing: border-box;
-  z-index: 99;
+  z-index: 9999;
 }

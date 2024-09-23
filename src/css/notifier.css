@@ -10,50 +10,51 @@
  */
 
 ::part(finefind-notifier), #finefind-notifier {
-  margin: 0rem;
-  padding: 1.4rem 1.4rem 1.4rem 1.8rem;
+  margin: 0em;
+  padding: 1.4em 1.4em 1.4em 1.8em;
   display: flex;
+  font-size: calc( 8px + 1vh );
   align-items: center;
-  gap: 1.2rem;
+  gap: 1.2em;
   visibility: hidden;
   position: fixed;
-  left: 0rem;
-  bottom: 4rem;
+  left: 0em;
+  bottom: 4em;
   box-sizing: border-box;
   background-color: #F8F8F8;
-  box-shadow: 0.2rem 0.2rem 2.2rem -1rem black;
-  border-radius: 0.4rem;
-  z-index: 99;
+  box-shadow: 0.2em 0.2em 2.2em -1em black;
+  border-radius: 0.4em;
+  z-index: 9998;
 }
 
 ::part(finefind-notifier-icon), #finefind-notifier-icon {
-  height: 2rem;
-  width: 2rem;
+  height: 2em;
+  width: 2em;
   background-size: contain;
   background-repeat: no-repeat;
 }
 
 ::part(finefind-notifier-textbox), #finefind-notifier-textbox {
-  margin: 0rem;
-  padding: 0rem;
+  margin: 0em;
+  padding: 0em;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.6em;
   user-select: none;
 }
 
 ::part(finefind-notifier-text), #finefind-notifier-text {
-  margin: 0rem;
-  padding: 0rem;
+  margin: 0em;
+  padding: 0em;
   font-family: sans-serif;
-  font-size: 1.4rem;
+  font-size: 1.4em;
 }
 
 ::part(finefind-notifier-subtext), #finefind-notifier-subtext {
-  margin: 0rem;
-  padding: 0rem;
+  margin: 0em;
+  padding: 0em;
   font-family: sans-serif;
-  font-size: 0.84rem;
+  font-size: 0.84em;
   font-style: italic;
 }
 
@@ -63,8 +64,8 @@
  */
 
 ::part(finefind-circle-loading), #finefind-circle-loading {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.2em;
+  height: 1.2em;
   position: relative;
   align-self: flex-end;
 }
@@ -74,7 +75,7 @@
   position: absolute;
   width: 100%;
   height: 100%;
-  clip-path: inset(0px 0.6rem 0px 0px);
+  clip-path: inset(0px 0.6em 0px 0px);
 }
 
 ::part(finefind-circle-left-fill), #finefind-circle-left-fill,

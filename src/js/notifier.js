@@ -64,7 +64,7 @@ class Notifier {
       },
       {
         visibility: 'visible',
-        transform: 'translateX(2.2rem)'
+        transform: 'translateX(2.2em)'
       }
     ]
     const slideOut = [
