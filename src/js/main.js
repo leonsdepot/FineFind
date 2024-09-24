@@ -27,22 +27,45 @@ const isPositionOutsideDoc = ( x, y ) => {
   return x < 0 || y < 0 || x > document.documentElement.scrollWidth || y > document.documentElement.scrollHeight;
 }
 
-let isCtrlFPressed = false;
 let isUserSelect = false;
-document.addEventListener( 'keydown', ( event ) => {
-  if ( ( event.ctrlKey || event.metaKey ) && event.key === 'f' && !isCtrlFPressed ) {
-    isCtrlFPressed = true;
-    
-    const highlighter = new Highlighter( browser.runtime.getURL( 'img/ring.svg' ) );
-    const notifier = new Notifier( browser.runtime.getURL( 'img/logo.svg' ) );
-    document.body.appendChild(
-      createShadowGroup( [highlighter.getElement(), notifier.getElement()] )
-    );
+document.addEventListener( 'focus', () => {
+  isUserSelect = true;
+})
 
-    let settings = Utils.defaultSettings.settings;
-    Utils.restoreOptions()
-    .then( storageSettings => {
-      settings = storageSettings;
+document.addEventListener( 'mousedown', () => {
+  isUserSelect = true;
+})
+
+document.addEventListener( 'keydown', () => {
+  isUserSelect = true;
+})
+
+document.addEventListener( 'blur', () => {
+  isUserSelect = false;
+})
+
+const highlighter = new Highlighter( browser.runtime.getURL( 'img/ring.svg' ) );
+const notifier = new Notifier( browser.runtime.getURL( 'img/logo.svg' ) );
+let isInitiated = false;
+Utils.restoreOptions()
+.then( settings => {
+  document.addEventListener( 'selectionchange', () => {
+    if ( isUserSelect ) {
+      return;
+    }
+
+    if ( ! isInitiated ) {
+      isInitiated = true;
+
+      document.body.appendChild(
+        createShadowGroup( [highlighter.getElement(), notifier.getElement()] )
+      );
+
+      highlighter.updateColor(
+        settings.highlighterHueDegree.value,
+        settings.highlighterBrightness.value,
+        settings.highlighterSaturation.value
+      );
 
       if ( settings.showBanner.value ) {
         notifier.show(
@@ -50,51 +73,23 @@ document.addEventListener( 'keydown', ( event ) => {
           browser.i18n.getMessage( 'isActiveReminder_subText' )
         );
       }
+    }
 
-      highlighter.updateColor(
-        settings.highlighterHueDegree.value,
-        settings.highlighterBrightness.value,
-        settings.highlighterSaturation.value
+    const selectionRange = window.getSelection().getRangeAt( 0 );
+    const position = getRangePosition( selectionRange );
+
+    if ( isInsideIframe( selectionRange ) ) {
+      notifier.show(
+        browser.i18n.getMessage( 'error_isInsideIframe' ),
+        browser.i18n.getMessage( 'error_isInsideIframe_subText' )
       );
-    })
-    
-    document.addEventListener( 'focus', () => {
-      isUserSelect = true;
-    })
-
-    document.addEventListener( 'mousedown', () => {
-      isUserSelect = true;
-    })
-
-    document.addEventListener( 'keydown', () => {
-      isUserSelect = true;
-    })
-
-    document.addEventListener( 'blur', () => {
-      isUserSelect = false;
-    })
-    
-    document.addEventListener( 'selectionchange', () => {
-      if ( isUserSelect ) {
-        return;
-      }
-
-      const selectionRange = window.getSelection().getRangeAt( 0 );
-      const position = getRangePosition( selectionRange );
-
-      if ( isInsideIframe( selectionRange ) ) {
-        notifier.show(
-          browser.i18n.getMessage( 'error_isInsideIframe' ),
-          browser.i18n.getMessage( 'error_isInsideIframe_subText' )
-        );
-      }
-      else if ( isPositionOutsideDoc( position.x, position.y ) ) {
-        notifier.show( browser.i18n.getMessage( 'error_rangeOutsideDoc' ) );
-      }
-      else {
-        highlighter.moveTo( position.x, position.y );
-        highlighter.animate( settings.highlighterDuration.value );
-      }
-    })
-  }
+    }
+    else if ( isPositionOutsideDoc( position.x, position.y ) ) {
+      notifier.show( browser.i18n.getMessage( 'error_rangeOutsideDoc' ) );
+    }
+    else {
+      highlighter.moveTo( position.x, position.y );
+      highlighter.animate( settings.highlighterDuration.value );
+    }
+  })
 })
