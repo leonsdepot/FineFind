@@ -8,12 +8,8 @@
     "description": "Description of the extension."
   },
   "isActiveReminder": {
-    "message": "FineFind is now active on this page only!",
+    "message": "FineFind is now active on this page!",
     "description": "Message is shown every time when FineFind is startet on a page."
-  },
-  "isActiveReminder_subText": {
-    "message": "To use FineFind on other pages, please activate it again.",
-    "description": "This message informs users that FineFind becomes inactive after a page change. CTRL+F must be pressed to reactivate it."
   },
   "error_isInsideIframe": {
     "message": "Result is not accessible!",

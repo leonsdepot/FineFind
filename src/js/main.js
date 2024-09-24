@@ -69,8 +69,7 @@ Utils.restoreOptions()
 
       if ( settings.showBanner.value ) {
         notifier.show(
-          browser.i18n.getMessage( 'isActiveReminder' ),
-          browser.i18n.getMessage( 'isActiveReminder_subText' )
+          browser.i18n.getMessage( 'isActiveReminder' )
         );
       }
     }
