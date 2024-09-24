@@ -1,7 +1,7 @@
 class Utils {
   static defaultSettings = {
     settings: {
-      showBanner: { value: true },
+      showBanner: { value: false },
       highlighterDuration: { value: 1000 },
       highlighterHueDegree: { value: 0 },
       highlighterBrightness: { value: 1 },
