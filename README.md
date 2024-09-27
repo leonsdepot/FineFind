@@ -76,3 +76,8 @@
 - [HTMLSelectElement: disabled property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/disabled)
 - [StorageArea.remove()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove)
 - [Location: reload() method](https://developer.mozilla.org/en-US/docs/Web/API/Location/reload)
+- [background](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/manifest.json/background)
+- [Background scripts](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Background_scripts)
+- [runtime.onInstalled](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/onInstalled)
+- [runtime.OnInstalledReason](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/OnInstalledReason)
+- [runtime.openOptionsPage()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/openOptionsPage)

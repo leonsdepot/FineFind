@@ -23,6 +23,9 @@
     "activeTab",
     "storage"
   ],
+  "background": {
+    "scripts": ["js/background.js"]
+  },
   "content_scripts": [
     {
       "matches": ["*://*/*"],
