@@ -44,11 +44,12 @@ document.addEventListener( 'blur', () => {
   isUserSelect = false;
 })
 
-const highlighter = new Highlighter( browser.runtime.getURL( 'img/ring.svg' ) );
-const notifier = new Notifier( browser.runtime.getURL( 'img/logo.svg' ) );
-let isInitiated = false;
 Utils.restoreOptions()
 .then( settings => {
+  const highlighter = new Highlighter( browser.runtime.getURL( 'img/ring.svg' ) );
+  const notifier = new Notifier( browser.runtime.getURL( 'img/logo.svg' ) );
+
+  let isInitiated = false;
   document.addEventListener( 'selectionchange', () => {
     if ( isUserSelect ) {
       return;
