@@ -78,18 +78,27 @@ Utils.restoreOptions()
     const selectionRange = window.getSelection().getRangeAt( 0 );
     const position = getRangePosition( selectionRange );
 
+    let failureResponse = null;
     if ( isInsideIframe( selectionRange ) ) {
-      notifier.show(
+      failureResponse = [
         browser.i18n.getMessage( 'error_isInsideIframe' ),
         browser.i18n.getMessage( 'error_isInsideIframe_subText' )
-      );
+      ];
     }
     else if ( isPositionOutsideDoc( position.x, position.y ) ) {
-      notifier.show( browser.i18n.getMessage( 'error_rangeOutsideDoc' ) );
+      failureResponse = [ browser.i18n.getMessage( 'error_rangeOutsideDoc' ) ];
     }
-    else {
-      highlighter.moveTo( position.x, position.y );
-      highlighter.animate( settings.highlighterDuration.value );
+
+    if ( failureResponse ) {
+      notifier.show(
+        failureResponse[0],
+        failureResponse[1] || null
+      );
+
+      return;
     }
+
+    highlighter.moveTo( position.x, position.y );
+    highlighter.animate( settings.highlighterDuration.value );
   })
 })
