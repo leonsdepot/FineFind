@@ -43,12 +43,12 @@
     "message": "Behavior",
     "description": "This is the title for a section on the settings page."
   },
-  "setting_showBanner": {
+  "setting_showBannerOnActivation": {
     "message": "Show banner when activated",
     "description": "This is the text for an option label on the settings page. The user can decide whether they receive an 'is active' notification or not."
   },
   "setting_showBannerOnFailure": {
-    "message": "Show a banner for invalid results",
+    "message": "Show banner for invalid results",
     "description": "This is the text for an option label on the settings page. The user can decide whether they receive a notification when a result check failed, i.e., because the result is off the visible page."
   },
   "setting_highlighterDuration": {
