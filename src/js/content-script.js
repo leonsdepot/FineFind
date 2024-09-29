@@ -90,10 +90,12 @@ Utils.restoreOptions()
     }
 
     if ( failureResponse ) {
-      notifier.show(
-        failureResponse[0],
-        failureResponse[1] || null
-      );
+      if ( settings.showBannerOnFailure.value ) {
+        notifier.show(
+          failureResponse[0],
+          failureResponse[1] || null
+        );
+      }
 
       return;
     }

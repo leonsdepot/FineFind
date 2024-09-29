@@ -2,6 +2,7 @@ class Utils {
   static defaultSettings = {
     settings: {
       showBanner: { value: false },
+      showBannerOnFailure: { value: true },
       highlighterDuration: { value: 1000 },
       highlighterHueDegree: { value: 0 },
       highlighterBrightness: { value: 1 },
