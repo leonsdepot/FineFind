@@ -68,7 +68,7 @@ Utils.restoreOptions()
         settings.highlighterSaturation.value
       );
 
-      if ( settings.showBanner.value ) {
+      if ( settings.showBannerOnActivation.value ) {
         notifier.show(
           browser.i18n.getMessage( 'isActiveReminder' )
         );
