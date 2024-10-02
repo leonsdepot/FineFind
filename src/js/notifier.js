@@ -124,11 +124,21 @@ class Notifier {
     this.circle2.addEventListener( 'finish', () => {
       this.msgBoxOut.play();
     })
+
+    this.msgBoxOut.addEventListener( 'finish', () => {
+      this.#clearText();
+    })
   }
 
   #setIdAndPart( element, id ) {
     element.setAttribute( 'id', id );
     element.setAttribute( 'part', id );
+  }
+
+  #clearText() {
+    while ( this.textBox.firstChild ) {
+      this.textBox.firstChild.remove();
+    }
   }
 
   #createTextElement( text, id = false ) {
@@ -146,9 +156,7 @@ class Notifier {
   }
 
   show( text, subText = false ) {
-    while ( this.textBox.firstChild ) {
-      this.textBox.firstChild.remove();
-    }
+    this.#clearText();
 
     this.textBox.appendChild( this.#createTextElement( text, 'finefind-notifier-text' ) );
     if ( subText ) {
