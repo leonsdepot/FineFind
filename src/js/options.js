@@ -54,10 +54,8 @@ Utils.restoreOptions()
       if ( input.getAttribute( 'type' ) == 'checkbox' ) {
         storageSettings[key].value = input.checked;
       }
-      else if (
-      input.getAttribute( 'type' ) == 'number' ||
-      input.getAttribute( 'type' ) == 'range' ) {
-        storageSettings[key].value = Number( input.value );
+      else if ( input.valueAsNumber ) {
+        storageSettings[key].value = input.valueAsNumber;
       }
       else {
         storageSettings[key].value = input.value;

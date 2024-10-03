@@ -76,3 +76,4 @@
 - [HTMLSelectElement: disabled property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLSelectElement/disabled)
 - [StorageArea.remove()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/storage/StorageArea/remove)
 - [Location: reload() method](https://developer.mozilla.org/en-US/docs/Web/API/Location/reload)
+- [HTMLInputElement: valueAsNumber property](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/valueAsNumber)
