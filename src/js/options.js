@@ -83,6 +83,11 @@ Utils.restoreOptions()
     })
   })
   previewControls[0].dispatchEvent( new Event( 'input' ) );
+
+  const durationControl = document.querySelector( '#highlighterDuration' );
+  durationControl.addEventListener( 'input', () => {
+    higlighter.animate( durationControl.valueAsNumber );
+  })
 })
 .then( () => {
   const reset = document.querySelector( '#reset' );
