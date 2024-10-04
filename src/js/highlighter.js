@@ -4,6 +4,17 @@ class Highlighter {
     this.ring.setAttribute( 'id', 'finefind-indicator' );
     this.ring.setAttribute( 'part', 'finefind-indicator' );
     this.ring.style.backgroundImage = 'url(' + path + ')';
+
+    this.animation = new Animation(
+      new KeyframeEffect(
+        this.ring,
+        [
+          { backgroundSize: '100%' },
+          { backgroundSize: '0%' }
+        ],
+        { duration: 500, easing: 'cubic-bezier(0.33, 1, 0.68, 1)' }
+      )
+    )
   }
 
   getElement() {
@@ -23,15 +34,8 @@ class Highlighter {
   }
 
   animate( milliseconds = 1000 ) {
-    this.ring.animate(
-      [
-        { backgroundSize: '100%' },
-        { backgroundSize: '0%' }
-      ],
-      {
-        duration: milliseconds,
-        easing: 'cubic-bezier(0.33, 1, 0.68, 1)'
-      }
-    )
+    this.animation.cancel();
+    this.animation.effect.updateTiming( { duration: milliseconds } );
+    this.animation.play();
   }
 }
