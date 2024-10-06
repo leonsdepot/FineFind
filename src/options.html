@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/options.css">
   </head>
   <body>
@@ -26,11 +27,6 @@
       <div class="previewBox">
         <div id="finefind-indicatorBox"></div>
         <form class="--compact">
-          <label for="highlighterDuration" data-i18n="highlighterDuration"></label>
-          <div class="rangeAndValue">
-            <input type="range" id="highlighterDuration" name="highlighterDuration" min="0" max="10000" step="100">
-            <output for="highlighterDuration"></output>
-          </div>
           <label for="highlighterHueDegree" data-i18n="highlighterHueDegree"></label>
           <div class="rangeAndValue">
             <input type="range" id="highlighterHueDegree" name="highlighterHueDegree" min="0" max="360" step="1">
@@ -48,6 +44,13 @@
           </div>
         </form>
       </div>
+      <form class="--compact">
+        <label for="highlighterDuration" data-i18n="highlighterDuration"></label>
+        <div class="rangeAndValue">
+          <input type="range" id="highlighterDuration" name="highlighterDuration" min="0" max="10000" step="100">
+          <output for="highlighterDuration"></output>
+        </div>
+      </form>
       <form id="actionButtons">
         <button id="debug" style="display: none;" data-i18n="debug"></button>
         <button id="reset" data-i18n="reset"></button>
