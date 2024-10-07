@@ -39,6 +39,10 @@
     "message": "Issues",
     "description": "This is the text for a button on the settings page."
   },
+  "setting_donate": {
+    "message": "Buy me a ☕",
+    "description": "This is the text for a button on the settings page."
+  },
   "setting_behavior": {
     "message": "Behavior",
     "description": "This is the title for a section on the settings page."
