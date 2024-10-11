@@ -1,0 +1,68 @@
+{
+  "extensionName": {
+    "message": "FineFind"
+  },
+  "extensionDescription": {
+    "message": "Effizientere Strg+F-Suche mit besser hervorgehobenen Suchergebnissen!"
+  },
+  "isActiveReminder": {
+    "message": "FineFind ist hier jetzt aktiv!"
+  },
+  "error_isInsideIframe": {
+    "message": "Ergebnis nicht verfügbar!"
+  },
+  "error_isInsideIframe_subText": {
+    "message": "Dieses Ergebnis, sowie evt. folgende, können von FineFind nicht gelesen werden."
+  },
+  "error_rangeOutsideDoc": {
+    "message": "Ergebnis ist außerhalb der Seite!"
+  },
+  "setting_thanks": {
+    "message": "Danke für die Nutzung von FineFind!"
+  },
+  "setting_moreInformation": {
+    "message": "Weiterführende Links:"
+  },
+  "setting_website": {
+    "message": "Website"
+  },
+  "setting_issues": {
+    "message": "Feedback"
+  },
+  "setting_donate": {
+    "message": "Gönn mir 'n ☕"
+  },
+  "setting_behavior": {
+    "message": "Verhalten"
+  },
+  "setting_showBannerOnActivation": {
+    "message": "Banner bei Aktivierung anzeigen"
+  },
+  "setting_showBannerOnFailure": {
+    "message": "Banner bei ungültigen Suchergebnissen anzeigen"
+  },
+  "setting_highlighterDuration": {
+    "message": "Animationszeit (ms)"
+  },
+  "setting_appearance": {
+    "message": "Ansicht"
+  },
+  "setting_highlighterHueDegree": {
+    "message": "Farbton"
+  },
+  "setting_highlighterBrightness": {
+    "message": "Helligkeit"
+  },
+  "setting_highlighterSaturation": {
+    "message": "Sättigung"
+  },
+  "setting_debug": {
+    "message": "Debug-Informationen protokollieren"
+  },
+  "setting_reset": {
+    "message": "Alles zurücksetzen"
+  },
+  "setting_resetConfirm": {
+    "message": "Dieser Schritt setzt alle Einstellungen zurück. Fortfahren?"
+  }
+}
