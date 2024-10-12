@@ -90,7 +90,9 @@ input[type=number] {
 }
 
 button, .button {
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0.6rem 1rem;
   border: 0.1rem solid var(--bg-color-contrast);
   border-radius: 0.2rem;
@@ -121,13 +123,15 @@ h2 { font-size: 1.1rem; font-weight: bold; }
 }
 
 .bubbleBox {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  white-space: nowrap;
   gap: 0.8rem;
 }
 
 .bubble {
-  padding: 1rem;
+  flex: 1;
+  padding: 1rem 0.6rem;
   border: none;
   border-radius: 2rem;
 }
