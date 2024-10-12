@@ -1,0 +1,68 @@
+{
+  "extensionName": {
+    "message": "FineFind"
+  },
+  "extensionDescription": {
+    "message": "Torna os resultados do Ctrl+F mais facéis de serem notados através de uma animação."
+  },
+  "isActiveReminder": {
+    "message": "FineFind está agora ativo na página atual!"
+  },
+  "error_isInsideIframe": {
+    "message": "O resultado não pode ser acessado."
+  },
+  "error_isInsideIframe_subText": {
+    "message": "Este resultado, e provavelmente os subsquentes, não podem ser acessados por FineFind."
+  },
+  "error_rangeOutsideDoc": {
+    "message": "Nenhum resultado encontrado!"
+  },
+  "setting_thanks": {
+    "message": "Obrigado por usar FineFind!"
+  },
+  "setting_moreInformation": {
+    "message": "Visite estas páginas para mais informações:"
+  },
+  "setting_website": {
+    "message": "Site"
+  },
+  "setting_issues": {
+    "message": "Problemas"
+  },
+  "setting_donate": {
+    "message": "Me compre um ☕"
+  },
+  "setting_behavior": {
+    "message": "Comportamento"
+  },
+  "setting_showBannerOnActivation": {
+    "message": "Mostrar banner quano ativado"
+  },
+  "setting_showBannerOnFailure": {
+    "message": "Show banner for invalid results"
+  },
+  "setting_highlighterDuration": {
+    "message": "Duração da Animação (ms)"
+  },
+  "setting_appearance": {
+    "message": "Aparência"
+  },
+  "setting_highlighterHueDegree": {
+    "message": "Cor (Hue)"
+  },
+  "setting_highlighterBrightness": {
+    "message": "Brilho"
+  },
+  "setting_highlighterSaturation": {
+    "message": "Saturação"
+  },
+  "setting_debug": {
+    "message": "Debug"
+  },
+  "setting_reset": {
+    "message": "Restaurar Configuração Padrão"
+  },
+  "setting_resetConfirm": {
+    "message": "Você tem certeza que deseja restaurar as configurações padrão? Esta ação não poderá ser desfeita."
+  }
+}

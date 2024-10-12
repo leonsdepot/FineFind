@@ -31,4 +31,4 @@ Please submit any issues or feature requests through the projects issue tracker.
 ( If you prefer to communicate privately, you can reach out via direct message on Nexus Mods 😉 )
 
 ## Credits
-TBD
+I am delighted that some people helped me with the translation to make the extension understandable for everyone. I would like to thank [NikoTheFox](https://github.com/RandomWolf) (English) and [Vinicius Vechio Berger](https://next.nexusmods.com/profile/Vechio/about-me) (Portuguese).
