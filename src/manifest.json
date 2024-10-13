@@ -12,7 +12,7 @@
   "default_locale": "en",
   "browser_specific_settings": {
     "gecko": {
-      "id": "finefind@leonsdepot.de",
+      "id": "finefind@addons.leonsdepot.de",
       "strict_min_version": "109.0"
     }
   },
