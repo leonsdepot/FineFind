@@ -29,6 +29,9 @@
   "setting_issues": {
     "message": "🛠️ Feedback"
   },
+  "setting_youtube": {
+    "message": "▶️ YouTube"
+  },
   "setting_donate": {
     "message": "Gönn mir 'n ☕"
   },

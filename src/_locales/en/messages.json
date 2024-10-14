@@ -39,6 +39,10 @@
     "message": "🛠️ Issues",
     "description": "This is the text for a button on the settings page."
   },
+  "setting_youtube": {
+    "message": "▶️ YouTube",
+    "description": "This is the text for a button on the settings page."
+  },
   "setting_donate": {
     "message": "Buy me a ☕",
     "description": "This is the text for a button on the settings page."

@@ -29,6 +29,9 @@
   "setting_issues": {
     "message": "🛠️ Problemas"
   },
+  "setting_youtube": {
+    "message": "▶️ YouTube"
+  },
   "setting_donate": {
     "message": "Me compre um ☕"
   },
