@@ -55,26 +55,6 @@ Utils.restoreOptions()
       return;
     }
 
-    if ( ! isInitiated ) {
-      isInitiated = true;
-
-      document.body.appendChild(
-        createShadowGroup( [highlighter.getElement(), notifier.getElement()] )
-      );
-
-      highlighter.updateColor(
-        settings.highlighterHueDegree.value,
-        settings.highlighterBrightness.value,
-        settings.highlighterSaturation.value
-      );
-
-      if ( settings.showBannerOnActivation.value ) {
-        notifier.show(
-          browser.i18n.getMessage( 'isActiveReminder' )
-        );
-      }
-    }
-
     const selectionRange = window.getSelection().getRangeAt( 0 );
     const position = getRangePosition( selectionRange );
 
@@ -98,6 +78,26 @@ Utils.restoreOptions()
       }
 
       return;
+    }
+
+    if ( ! isInitiated ) {
+      isInitiated = true;
+
+      document.body.appendChild(
+        createShadowGroup( [highlighter.getElement(), notifier.getElement()] )
+      );
+
+      highlighter.updateColor(
+        settings.highlighterHueDegree.value,
+        settings.highlighterBrightness.value,
+        settings.highlighterSaturation.value
+      );
+
+      if ( settings.showBannerOnActivation.value ) {
+        notifier.show(
+          browser.i18n.getMessage( 'isActiveReminder' )
+        );
+      }
     }
 
     highlighter.moveTo( position.x, position.y );
