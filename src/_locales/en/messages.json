@@ -32,11 +32,11 @@
     "description": "This is the additional text for the information box on the settings page."
   },
   "setting_website": {
-    "message": "Website",
+    "message": "🌐 Website",
     "description": "This is the text for a button on the settings page."
   },
   "setting_issues": {
-    "message": "Issues",
+    "message": "🛠️ Issues",
     "description": "This is the text for a button on the settings page."
   },
   "setting_donate": {
