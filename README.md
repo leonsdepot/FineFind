@@ -18,14 +18,19 @@ This extension is currently compatible with Firefox only. Some Firefox-based bro
 
 Chrome and Chromium-based browsers are currently incompatible with the method FineFind uses to detect search results. If you discover a workaround, we encourage you to share it with us.
 
-## How to use
+## How it works
 
-To use FineFind, simply open your browsers native in-page search (Ctrl + F). FineFind will integrate seamlessly, displaying an indicator as you navigate through search results.
+To use FineFind, simply open your browsers native in-page search (Ctrl + F). FineFind will integrate seamlessly, displaying a green ring (customizable) as an indicator to highlight search results.
 
 You can further customize your experience via the FineFind options page.
 
 #### ℹ️ Notice of Restricted Websites
+
 This extension does not work on certain websites like _addons.mozilla.org_, _accounts.firefox.com_, or _support.mozilla.org_ due to browser restrictions. [Read more](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#restricted_domains)
+
+#### ✨ Preview
+
+![StickAround](https://github.com/user-attachments/assets/0c1a470d-385d-42ff-9e3f-6ad1275292c2)
 
 ## Contribution
 
