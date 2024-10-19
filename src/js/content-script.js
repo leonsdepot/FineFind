@@ -46,17 +46,33 @@ document.addEventListener( 'blur', () => {
 
 Utils.restoreOptions()
 .then( settings => {
-  const highlighter = new Highlighter( browser.runtime.getURL( 'img/ring.svg' ) );
   const notifier = new Notifier( browser.runtime.getURL( 'img/logo.svg' ) );
+  const highlighter = new Highlighter( browser.runtime.getURL( 'img/ring.svg' ) );
+  highlighter.updateColor(
+    settings.highlighterHueDegree.value,
+    settings.highlighterBrightness.value,
+    settings.highlighterSaturation.value
+  );
+  const shadowHost = createShadowGroup( [highlighter.getElement(), notifier.getElement()] );
 
-  let isInitiated = false;
+  let isWelcomeMsgShown = ! settings.showBannerOnActivation.value;
   document.addEventListener( 'selectionchange', () => {
     if ( isUserSelect ) {
       return;
     }
 
+    if ( ! document.body.contains( shadowHost ) ) {
+      document.body.appendChild( shadowHost );
+    }
+
     const selectionRange = window.getSelection().getRangeAt( 0 );
     const position = getRangePosition( selectionRange );
+
+    if ( ! isWelcomeMsgShown ) {
+      notifier.show( browser.i18n.getMessage( 'isActiveReminder' ) );
+
+      isWelcomeMsgShown = true;
+    }
 
     if ( isInsideIframe( selectionRange ) ) {
       notifier.show(
@@ -73,26 +89,6 @@ Utils.restoreOptions()
         settings.showBannerOnFailure.value
       );
       return;
-    }
-
-    if ( ! isInitiated ) {
-      isInitiated = true;
-
-      document.body.appendChild(
-        createShadowGroup( [highlighter.getElement(), notifier.getElement()] )
-      );
-
-      highlighter.updateColor(
-        settings.highlighterHueDegree.value,
-        settings.highlighterBrightness.value,
-        settings.highlighterSaturation.value
-      );
-
-      notifier.show(
-        browser.i18n.getMessage( 'isActiveReminder' ),
-        null,
-        settings.showBannerOnActivation.value
-      );
     }
 
     highlighter.moveTo( position.x, position.y );
