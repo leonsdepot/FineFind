@@ -58,25 +58,20 @@ Utils.restoreOptions()
     const selectionRange = window.getSelection().getRangeAt( 0 );
     const position = getRangePosition( selectionRange );
 
-    let failureResponse = null;
     if ( isInsideIframe( selectionRange ) ) {
-      failureResponse = [
+      notifier.show(
         browser.i18n.getMessage( 'error_isInsideIframe' ),
-        browser.i18n.getMessage( 'error_isInsideIframe_subText' )
-      ];
+        browser.i18n.getMessage( 'error_isInsideIframe_subText' ),
+        settings.showBannerOnFailure.value
+      );
+      return;
     }
     else if ( isPositionOutsideDoc( position.x, position.y ) ) {
-      failureResponse = [ browser.i18n.getMessage( 'error_rangeOutsideDoc' ) ];
-    }
-
-    if ( failureResponse ) {
-      if ( settings.showBannerOnFailure.value ) {
-        notifier.show(
-          failureResponse[0],
-          failureResponse[1] || null
-        );
-      }
-
+      notifier.show(
+        browser.i18n.getMessage( 'error_rangeOutsideDoc' ),
+        null,
+        settings.showBannerOnFailure.value
+      );
       return;
     }
 
@@ -93,11 +88,11 @@ Utils.restoreOptions()
         settings.highlighterSaturation.value
       );
 
-      if ( settings.showBannerOnActivation.value ) {
-        notifier.show(
-          browser.i18n.getMessage( 'isActiveReminder' )
-        );
-      }
+      notifier.show(
+        browser.i18n.getMessage( 'isActiveReminder' ),
+        null,
+        settings.showBannerOnActivation.value
+      );
     }
 
     highlighter.moveTo( position.x, position.y );

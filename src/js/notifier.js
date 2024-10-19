@@ -155,7 +155,11 @@ class Notifier {
     return this.msgBox;
   }
 
-  show( text, subText = false ) {
+  show( text, subText = false, isConditionMet = true ) {
+    if ( ! isConditionMet ) {
+      return;
+    }
+
     this.#clearText();
 
     this.textBox.appendChild( this.#createTextElement( text, 'finefind-notifier-text' ) );
