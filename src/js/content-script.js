@@ -65,14 +65,14 @@ Utils.restoreOptions()
       document.body.appendChild( shadowHost );
     }
 
-    const selectionRange = window.getSelection().getRangeAt( 0 );
-    const position = getRangePosition( selectionRange );
-
     if ( ! isWelcomeMsgShown ) {
       notifier.show( browser.i18n.getMessage( 'isActiveReminder' ) );
 
       isWelcomeMsgShown = true;
     }
+
+    const selectionRange = window.getSelection().getRangeAt( 0 );
+    const position = getRangePosition( selectionRange );
 
     if ( isInsideIframe( selectionRange ) ) {
       notifier.show(
