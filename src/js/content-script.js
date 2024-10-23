@@ -19,8 +19,8 @@ const getRangePosition = ( range ) => {
   }
 }
 
-const isInsideIframe = ( range ) => {
-  return range.collapsed;
+const isEmpty = ( selection ) => {
+  return selection.type == 'Caret';
 }
 
 const isPositionOutsideDoc = ( x, y ) => {
@@ -71,15 +71,10 @@ Utils.restoreOptions()
       isWelcomeMsgShown = true;
     }
 
-    const selectionRange = window.getSelection().getRangeAt( 0 );
-    const position = getRangePosition( selectionRange );
+    const selection = window.getSelection();
+    const position = getRangePosition( selection.getRangeAt( 0 ) );
 
-    if ( isInsideIframe( selectionRange ) ) {
-      notifier.show(
-        browser.i18n.getMessage( 'error_isInsideIframe' ),
-        browser.i18n.getMessage( 'error_isInsideIframe_subText' ),
-        settings.showBannerOnFailure.value
-      );
+    if ( isEmpty( selection ) ) {
       return;
     }
     else if ( isPositionOutsideDoc( position.x, position.y ) ) {

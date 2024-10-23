@@ -84,3 +84,5 @@
 - [CSS/Funktionen/repeat()](https://wiki.selfhtml.org/wiki/CSS/Funktionen/repeat())
 - [CSS white-space Property](https://www.w3schools.com/cssref/pr_text_white-space.php)
 - [Node: contains() method](https://developer.mozilla.org/en-US/docs/Web/API/Node/contains)
+- [Selection: type property](https://developer.mozilla.org/en-US/docs/Web/API/Selection/type#caret)
+- [Detect when a Ctrl+F result is inside an iframe](https://discourse.mozilla.org/t/detect-when-a-ctrl-f-result-is-inside-an-iframe/)
