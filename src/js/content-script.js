@@ -46,6 +46,8 @@ document.addEventListener( 'blur', () => {
 
 Utils.restoreOptions()
 .then( settings => {
+  const isInIFrame = window.self !== window.top;
+
   const notifier = new Notifier( browser.runtime.getURL( 'img/logo.svg' ) );
   const highlighter = new Highlighter( browser.runtime.getURL( 'img/ring.svg' ) );
   highlighter.updateColor(
@@ -68,7 +70,7 @@ Utils.restoreOptions()
       document.body.appendChild( shadowHost );
     }
 
-    if ( ! isWelcomeMsgShown ) {
+    if ( ! isWelcomeMsgShown && ! isInIFrame ) {
       notifier.show( browser.i18n.getMessage( 'isActiveReminder' ) );
 
       isWelcomeMsgShown = true;
