@@ -57,7 +57,10 @@ Utils.restoreOptions()
 
   let isWelcomeMsgShown = ! settings.showBannerOnActivation.value;
   document.addEventListener( 'selectionchange', () => {
-    if ( isUserSelect ) {
+    const selection = window.getSelection();
+    const position = getRangePosition( selection.getRangeAt( 0 ) );
+
+    if ( isUserSelect || isEmpty( selection ) ) {
       return;
     }
 
@@ -71,13 +74,7 @@ Utils.restoreOptions()
       isWelcomeMsgShown = true;
     }
 
-    const selection = window.getSelection();
-    const position = getRangePosition( selection.getRangeAt( 0 ) );
-
-    if ( isEmpty( selection ) ) {
-      return;
-    }
-    else if ( isPositionOutsideDoc( position.x, position.y ) ) {
+    if ( isPositionOutsideDoc( position.x, position.y ) ) {
       notifier.show(
         browser.i18n.getMessage( 'error_rangeOutsideDoc' ),
         null,
