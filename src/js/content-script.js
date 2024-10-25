@@ -20,7 +20,7 @@ const getRangePosition = ( range ) => {
 }
 
 const isEmpty = ( selection ) => {
-  return selection.type == 'Caret';
+  return selection.type != 'Range';
 }
 
 const isPositionOutsideDoc = ( x, y ) => {
@@ -60,7 +60,6 @@ Utils.restoreOptions()
   let isWelcomeMsgShown = ! settings.showBannerOnActivation.value;
   document.addEventListener( 'selectionchange', () => {
     const selection = window.getSelection();
-    const position = getRangePosition( selection.getRangeAt( 0 ) );
 
     if ( isUserSelect || isEmpty( selection ) ) {
       return;
@@ -75,6 +74,8 @@ Utils.restoreOptions()
 
       isWelcomeMsgShown = true;
     }
+
+    const position = getRangePosition( selection.getRangeAt( 0 ) );
 
     if ( isPositionOutsideDoc( position.x, position.y ) ) {
       notifier.show(
