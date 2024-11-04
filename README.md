@@ -24,9 +24,8 @@ To use FineFind, simply open your browsers native in-page search (Ctrl + F). Fin
 
 You can further customize your experience via the FineFind options page.
 
-#### ℹ️ Notice of Restricted Websites
-
-This extension does not work on certain websites like _addons.mozilla.org_, _accounts.firefox.com_, or _support.mozilla.org_ due to browser restrictions. [Read more](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#restricted_domains)
+> [!IMPORTANT]  
+> This extension does not work on [certain websites](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/Content_scripts#restricted_domains) like _addons.mozilla.org_, _accounts.firefox.com_, or _support.mozilla.org_ due to browser restrictions.
 
 #### ✨ Preview
 
