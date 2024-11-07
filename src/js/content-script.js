@@ -61,7 +61,11 @@ Utils.restoreOptions()
   document.addEventListener( 'selectionchange', () => {
     const selection = window.getSelection();
 
-    if ( isUserSelect || isEmpty( selection ) ) {
+    if ( isUserSelect ) {
+      return;
+    }
+    else if ( isEmpty( selection ) ) {
+      highlighter.cancelAnimation();
       return;
     }
 

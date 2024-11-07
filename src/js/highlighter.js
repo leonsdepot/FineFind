@@ -33,8 +33,12 @@ class Highlighter {
       'saturate(' + saturation + ')';
   }
 
-  animate( milliseconds = 1000 ) {
+  cancelAnimation() {
     this.animation.cancel();
+  }
+
+  animate( milliseconds = 1000 ) {
+    this.cancelAnimation();
     this.animation.effect.updateTiming( { duration: milliseconds } );
     this.animation.play();
   }
