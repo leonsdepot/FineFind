@@ -60,7 +60,7 @@ class Notifier {
   #initAnimations() {
     const slideIn = [
       {
-        transform: 'translateX(-100%)'
+        transform: 'translateX(-120%)'
       },
       {
         visibility: 'visible',
@@ -69,7 +69,7 @@ class Notifier {
     ]
     const slideOut = [
       {
-        transform: 'translateX(-100%)'
+        transform: 'translateX(-120%)'
       }
     ]
     const rotate = [
