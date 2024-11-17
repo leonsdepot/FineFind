@@ -46,4 +46,8 @@ class Utils {
   static getLocalizedString( key ) {
     return browser.i18n.getMessage( key );
   }
+
+  static getInternalURL( path ) {
+    return browser.runtime.getURL( path );
+  }
 }

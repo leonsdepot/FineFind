@@ -48,8 +48,8 @@ Utils.restoreOptions()
 .then( settings => {
   const isInIFrame = window.self !== window.top;
 
-  const notifier = new Notifier( browser.runtime.getURL( 'img/logo.svg' ) );
-  const highlighter = new Highlighter( browser.runtime.getURL( 'img/ring.svg' ) );
+  const notifier = new Notifier( Utils.getInternalURL( 'img/logo.svg' ) );
+  const highlighter = new Highlighter( Utils.getInternalURL( 'img/ring.svg' ) );
   highlighter.updateColor(
     settings.highlighterHueDegree.value,
     settings.highlighterBrightness.value,
@@ -74,7 +74,7 @@ Utils.restoreOptions()
     }
 
     if ( ! isWelcomeMsgShown && ! isInIFrame ) {
-      notifier.show( browser.i18n.getMessage( 'isActiveReminder' ) );
+      notifier.show( Utils.getLocalizedString( 'isActiveReminder' ) );
 
       isWelcomeMsgShown = true;
     }
@@ -83,7 +83,7 @@ Utils.restoreOptions()
 
     if ( isPositionOutsideDoc( position.x, position.y ) ) {
       notifier.show(
-        browser.i18n.getMessage( 'error_rangeOutsideDoc' ),
+        Utils.getLocalizedString( 'error_rangeOutsideDoc' ),
         null,
         settings.showBannerOnFailure.value
       );
