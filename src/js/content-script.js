@@ -32,6 +32,14 @@ document.addEventListener( 'focus', () => {
   isUserSelect = true;
 })
 
+document.addEventListener( 'mousedown', () => {
+  isUserSelect = true;
+})
+
+document.addEventListener( 'keydown', () => {
+  isUserSelect = true;
+})
+
 document.addEventListener( 'blur', () => {
   isUserSelect = false;
 })
