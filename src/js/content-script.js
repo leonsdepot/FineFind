@@ -27,7 +27,53 @@ const isPositionOutsideDoc = ( x, y ) => {
   return x < 0 || y < 0 || x > document.documentElement.scrollWidth || y > document.documentElement.scrollHeight;
 }
 
+let notifier;
+let highlighter;
+let shadowHost;
+let settings;
+const setupInPage = () => {
+  notifier = new Notifier( Utils.getInternalURL( 'img/logo.svg' ) );
+  highlighter = new Highlighter( Utils.getInternalURL( 'img/ring.svg' ) );
+  shadowHost = createShadowGroup( [highlighter.getElement(), notifier.getElement()] );
+
+  document.body.appendChild( shadowHost );
+
+  return Utils.restoreOptions()
+  .then( loadedSettings => {
+    settings = loadedSettings;
+
+    highlighter.updateColor(
+      settings.highlighterHueDegree.value,
+      settings.highlighterBrightness.value,
+      settings.highlighterSaturation.value
+    );
+
+    if ( settings.showBannerOnActivation.value && window.self === window.top ) {
+      notifier.show( Utils.getLocalizedString( 'isActiveReminder' ) );
+    }
+  })
+}
+
+const updateHighlighter = ( selection ) => {
+  highlighter.cancelAnimation();
+
+  const position = getRangePosition( selection.getRangeAt( 0 ) );
+
+  if ( isPositionOutsideDoc( position.x, position.y ) ) {
+    notifier.show(
+      Utils.getLocalizedString( 'error_rangeOutsideDoc' ),
+      null,
+      settings.showBannerOnFailure.value
+    );
+    return;
+  }
+
+  highlighter.moveTo( position.x, position.y );
+  highlighter.animate( settings.highlighterDuration.value );
+}
+
 let isUserSelect = false;
+
 document.addEventListener( 'focus', () => {
   isUserSelect = true;
 })
@@ -44,53 +90,18 @@ document.addEventListener( 'blur', () => {
   isUserSelect = false;
 })
 
-Utils.restoreOptions()
-.then( settings => {
-  const isInIFrame = window.self !== window.top;
+document.addEventListener( 'selectionchange', () => {
+  const selection = window.getSelection();
 
-  const notifier = new Notifier( Utils.getInternalURL( 'img/logo.svg' ) );
-  const highlighter = new Highlighter( Utils.getInternalURL( 'img/ring.svg' ) );
-  highlighter.updateColor(
-    settings.highlighterHueDegree.value,
-    settings.highlighterBrightness.value,
-    settings.highlighterSaturation.value
-  );
-  const shadowHost = createShadowGroup( [highlighter.getElement(), notifier.getElement()] );
+  if ( isUserSelect || isEmpty( selection ) ) {
+    return;
+  }
+  else if ( ! document.body.contains( shadowHost ) ) {
+    setupInPage().then( () => {
+      updateHighlighter( selection );
+    })
+    return;
+  }
 
-  let isWelcomeMsgShown = ! settings.showBannerOnActivation.value;
-  document.addEventListener( 'selectionchange', () => {
-    const selection = window.getSelection();
-
-    if ( isUserSelect ) {
-      return;
-    }
-    else if ( isEmpty( selection ) ) {
-      highlighter.cancelAnimation();
-      return;
-    }
-
-    if ( ! document.body.contains( shadowHost ) ) {
-      document.body.appendChild( shadowHost );
-    }
-
-    if ( ! isWelcomeMsgShown && ! isInIFrame ) {
-      notifier.show( Utils.getLocalizedString( 'isActiveReminder' ) );
-
-      isWelcomeMsgShown = true;
-    }
-
-    const position = getRangePosition( selection.getRangeAt( 0 ) );
-
-    if ( isPositionOutsideDoc( position.x, position.y ) ) {
-      notifier.show(
-        Utils.getLocalizedString( 'error_rangeOutsideDoc' ),
-        null,
-        settings.showBannerOnFailure.value
-      );
-      return;
-    }
-
-    highlighter.moveTo( position.x, position.y );
-    highlighter.animate( settings.highlighterDuration.value );
-  })
+  updateHighlighter( selection );
 })
