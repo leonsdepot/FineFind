@@ -27,6 +27,8 @@ class Highlighter {
   }
 
   updateColor( hueDegree, brightness = 1, saturation = 1 ) {
+    if ( hueDegree === 0 && brightness === 1 && saturation === 1 ) return;
+
     this.ring.style.filter =
       'hue-rotate(' + hueDegree + 'deg) ' +
       'brightness(' + brightness + ') ' +
