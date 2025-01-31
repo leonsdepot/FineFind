@@ -54,20 +54,8 @@ const setupInPage = () => {
   })
 }
 
-const updateHighlighter = ( selection ) => {
+const updateHighlighter = ( position ) => {
   highlighter.cancelAnimation();
-
-  const position = getRangePosition( selection.getRangeAt( 0 ) );
-
-  if ( isPositionOutsideDoc( position.x, position.y ) ) {
-    notifier.show(
-      Utils.getLocalizedString( 'error_rangeOutsideDoc' ),
-      null,
-      settings.showBannerOnFailure.value
-    );
-    return;
-  }
-
   highlighter.moveTo( position.x, position.y );
   highlighter.animate( settings.highlighterDuration.value );
 }
@@ -90,7 +78,7 @@ document.addEventListener( 'blur', () => {
   isUserSelect = false;
 })
 
-document.addEventListener( 'selectionchange', () => {
+document.addEventListener( 'selectionchange', function handleSelection( e ) {
   const selection = window.getSelection();
 
   if ( isUserSelect || isEmpty( selection ) ) {
@@ -98,10 +86,21 @@ document.addEventListener( 'selectionchange', () => {
   }
   else if ( ! document.body.contains( shadowHost ) ) {
     setupInPage().then( () => {
-      updateHighlighter( selection );
+      handleSelection( e );
     })
     return;
   }
 
-  updateHighlighter( selection );
+  const position = getRangePosition( selection.getRangeAt( 0 ) );
+
+  if ( isPositionOutsideDoc( position.x, position.y ) ) {
+    notifier.show(
+      Utils.getLocalizedString( 'error_rangeOutsideDoc' ),
+      null,
+      settings.showBannerOnFailure.value
+    );
+    return;
+  }
+
+  updateHighlighter( position );
 })
