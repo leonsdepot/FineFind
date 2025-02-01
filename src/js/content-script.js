@@ -101,6 +101,9 @@ document.addEventListener( 'selectionchange', function handleSelection( e ) {
     );
     return;
   }
+  else if ( e.target.nodeName == 'TEXTAREA' ) {
+    return;
+  }
 
   updateHighlighter( position );
 })
