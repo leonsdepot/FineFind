@@ -88,3 +88,6 @@
 - [Detect when a Ctrl+F result is inside an iframe](https://discourse.mozilla.org/t/detect-when-a-ctrl-f-result-is-inside-an-iframe/)
 - [How to check a webpage is loaded inside an iframe (...)?](https://www.geeksforgeeks.org/how-to-check-a-webpage-is-loaded-inside-an-iframe-or-into-the-browser-window-using-javascript/)
 - [Node: nodeName property](https://developer.mozilla.org/en-US/docs/Web/API/Node/nodeName)
+- [Debounce](https://developer.mozilla.org/en-US/docs/Glossary/Debounce)
+- [Window: setTimeout() method](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout)
+- [Date.now()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now)

@@ -61,6 +61,7 @@ const updateHighlighter = ( position ) => {
 }
 
 let isUserSelect = false;
+let inputDebouncer;
 
 document.addEventListener( 'focus', () => {
   isUserSelect = true;
@@ -86,6 +87,8 @@ document.addEventListener( 'selectionchange', function handleSelection( e ) {
   }
   else if ( ! document.body.contains( shadowHost ) ) {
     setupInPage().then( () => {
+      inputDebouncer = new DynamicDebouncer( 300 );
+
       handleSelection( e );
     })
     return;
@@ -105,5 +108,5 @@ document.addEventListener( 'selectionchange', function handleSelection( e ) {
     return;
   }
 
-  updateHighlighter( position );
+  inputDebouncer.schedule( () => { updateHighlighter( position ) } );
 })
