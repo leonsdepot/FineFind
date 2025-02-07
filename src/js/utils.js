@@ -3,6 +3,7 @@ class Utils {
     settings: {
       showBannerOnActivation: { value: false },
       showBannerOnFailure: { value: true },
+      debounceTime: { value: 0 },
       highlighterDuration: { value: 1000 },
       highlighterHueDegree: { value: 0 },
       highlighterBrightness: { value: 1 },

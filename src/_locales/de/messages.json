@@ -44,6 +44,9 @@
   "setting_showBannerOnFailure": {
     "message": "Banner bei ungültigen Suchergebnissen anzeigen"
   },
+  "setting_debounceTime": {
+    "message": "Abklingzeit beim Tippen (ms)"
+  },
   "setting_highlighterDuration": {
     "message": "Animationszeit (ms)"
   },

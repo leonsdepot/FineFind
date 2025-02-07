@@ -44,6 +44,9 @@
   "setting_showBannerOnFailure": {
     "message": "Show banner for invalid results"
   },
+  "setting_debounceTime": {
+    "message": "Tempo de espera ao digitar (ms)"
+  },
   "setting_highlighterDuration": {
     "message": "Duração da Animação (ms)"
   },

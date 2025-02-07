@@ -87,7 +87,7 @@ document.addEventListener( 'selectionchange', function handleSelection( e ) {
   }
   else if ( ! document.body.contains( shadowHost ) ) {
     setupInPage().then( () => {
-      inputDebouncer = new DynamicDebouncer( 300 );
+      inputDebouncer = new DynamicDebouncer( settings.debounceTime.value );
 
       handleSelection( e );
     })
