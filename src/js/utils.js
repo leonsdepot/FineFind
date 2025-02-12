@@ -51,4 +51,28 @@ class Utils {
   static getInternalURL( path ) {
     return browser.runtime.getURL( path );
   }
+
+  static getDebugInfo() {
+    const manifest = browser.runtime.getManifest();
+    const language = browser.i18n.getUILanguage();
+
+    const platformInfo = browser.runtime.getPlatformInfo();
+    const settings = this.restoreOptions();
+
+    return Promise.all( [platformInfo, settings] )
+    .then( values => {
+      return {
+        "extension": {
+          "name": manifest.name,
+          "version": manifest.version
+        },
+        "platform": {
+          "arch": values[0]['arch'],
+          "os": values[0]['os'],
+          "locale": language
+        },
+        "settings": values[1]
+      }
+    })
+  }
 }

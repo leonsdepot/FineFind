@@ -23,9 +23,9 @@ if ( isSecretSettingsEnabled === "true" ) {
 
 const debug = document.querySelector( '#debug' );
 debug.addEventListener( 'click', () => {
-  Utils.getAllStorageData()
-  .then( storageData => {
-    console.log( storageData );
+  Utils.getDebugInfo()
+  .then( log => {
+    console.log( log );
   })
 })
 
