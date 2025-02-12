@@ -102,6 +102,10 @@ button, .button {
   text-align: center;
 }
 
+button.--hidden, .button.--hidden {
+  display: none;
+}
+
 button.--warn, .button.--warn {
   border-color: darkorange;
 }

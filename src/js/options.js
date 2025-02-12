@@ -13,6 +13,14 @@ document.querySelectorAll( '[data-i18n]' ).forEach( element => {
   }
 })
 
+const urlParams = new URLSearchParams( document.location.search );
+const isSecretSettingsEnabled = urlParams.get( 'secretSettings' );
+if ( isSecretSettingsEnabled === "true" ) {
+  document.querySelectorAll( 'button.secretSetting' ).forEach( element => {
+    element.classList.toggle( '--hidden' );
+  })
+}
+
 const debug = document.querySelector( '#debug' );
 debug.addEventListener( 'click', () => {
   Utils.getAllStorageData()
