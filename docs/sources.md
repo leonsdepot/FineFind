@@ -96,3 +96,6 @@
 - [runtime.getPlatformInfo()](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/runtime/getPlatformInfo)
 - [i18n](https://developer.mozilla.org/en-US/docs/Mozilla/Add-ons/WebExtensions/API/i18n)
 - [Promise.all()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise/all)
+- [JSON Stringify Ouput to Multiple Lines](https://stackoverflow.com/questions/24515894/json-stringify-ouput-to-multiple-lines)
+- [JSON.stringify()](https://www.w3schools.com/js/js_json_stringify.asp)
+- [How TO - Copy Text to Clipboard](https://www.w3schools.com/howto/howto_js_copy_clipboard.asp)

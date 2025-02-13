@@ -24,8 +24,9 @@ if ( isSecretSettingsEnabled === "true" ) {
 const debug = document.querySelector( '#debug' );
 debug.addEventListener( 'click', () => {
   Utils.getDebugInfo()
-  .then( log => {
-    console.log( log );
+  .then( log => JSON.stringify( log, null, " " ) )
+  .then( logJson => {
+    navigator.clipboard.writeText( '```js\n' + logJson + '\n```' );
   })
 })
 

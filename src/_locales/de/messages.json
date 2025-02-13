@@ -63,7 +63,7 @@
     "message": "Sättigung"
   },
   "setting_debug": {
-    "message": "Debug-Informationen protokollieren"
+    "message": "Debug-Informationen kopieren"
   },
   "setting_reset": {
     "message": "Alles zurücksetzen"

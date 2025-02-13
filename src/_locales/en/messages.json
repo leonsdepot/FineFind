@@ -84,7 +84,7 @@
     "description": "This is the text for an option label on the settings page."
   },
   "setting_debug": {
-    "message": "Log Debug Info",
+    "message": "Copy Debug Info",
     "description": "A hidden button that logs all saved information to the browser's console."
   },
   "setting_reset": {
