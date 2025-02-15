@@ -83,6 +83,10 @@
     "message": "Saturation",
     "description": "This is the text for an option label on the settings page."
   },
+  "setting_unrestrict": {
+    "message": "Unrestrict Inputs",
+    "description": "A hidden button that converts number sliders into freely editable number fields."
+  },
   "setting_debug": {
     "message": "Copy Debug Info",
     "description": "A hidden button that logs all saved information to the browser's console."

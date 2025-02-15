@@ -21,6 +21,13 @@ if ( isSecretSettingsEnabled === "true" ) {
   })
 }
 
+const unrestrict = document.querySelector( '#unrestrict' );
+unrestrict.addEventListener( 'click', () => {
+  document.querySelectorAll( 'input[type=range]' ).forEach( element => {
+    element.type = 'number';
+  })
+})
+
 const debug = document.querySelector( '#debug' );
 debug.addEventListener( 'click', () => {
   Utils.getDebugInfo()

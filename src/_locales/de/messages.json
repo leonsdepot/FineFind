@@ -62,6 +62,9 @@
   "setting_highlighterSaturation": {
     "message": "Sättigung"
   },
+  "setting_unrestrict": {
+    "message": "Eingabelimits aufheben"
+  },
   "setting_debug": {
     "message": "Debug-Informationen kopieren"
   },
