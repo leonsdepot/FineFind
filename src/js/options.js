@@ -13,6 +13,18 @@ document.querySelectorAll( '[data-i18n]' ).forEach( element => {
   }
 })
 
+let indicatorClicks = 0;
+const indicator = document.querySelector( '#finefind-indicatorBox' );
+indicator.addEventListener( 'click', () => {
+  indicatorClicks++;
+
+  if ( indicatorClicks % 20 === 0 ) {
+    window.open(
+      Utils.getInternalURL( 'options.html?secretSettings=true' )
+    );
+  }
+})
+
 const urlParams = new URLSearchParams( document.location.search );
 const isSecretSettingsEnabled = urlParams.get( 'secretSettings' );
 if ( isSecretSettingsEnabled === "true" ) {
