@@ -73,5 +73,8 @@
   },
   "setting_resetConfirm": {
     "message": "Dieser Schritt setzt alle Einstellungen zurück. Fortfahren?"
+  },
+  "setting_secretSettingsConfirm": {
+    "message": "Geheime Einstellungen anzeigen? \n\nBestimmte Einstellungen können die Erweiterung unbrauchbar machen. Nur verwenden, wenn ausdrücklich empfohlen oder deren Funktion bekannt ist."
   }
 }

@@ -27,7 +27,10 @@ indicator.addEventListener( 'click', () => {
 
 const urlParams = new URLSearchParams( document.location.search );
 const isSecretSettingsEnabled = urlParams.get( 'secretSettings' );
-if ( isSecretSettingsEnabled === "true" ) {
+if (
+  isSecretSettingsEnabled === 'true' &&
+  confirm( Utils.getLocalizedString( 'setting_secretSettingsConfirm' ) )
+) {
   document.querySelectorAll( 'button.secretSetting' ).forEach( element => {
     element.classList.toggle( '--hidden' );
   })
