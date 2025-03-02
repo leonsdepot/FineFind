@@ -99,7 +99,11 @@
     "message": "Are you sure you want to reset all settings? This action cannot be undone.",
     "description": "This text asks the user if they really want to delete all settings after pressing the reset button."
   },
-  "setting_secretSettingsConfirm": {
+  "setting_expert": {
+    "message": "Expert Mode",
+    "description": "This text is for an action button on the settings page. It will display the secret settings for experts."
+  },
+  "setting_expertConfirm": {
     "message": "Open secret settings? \n\nPlease be aware that some options may break this extension. Use them only if you really need to or have been advised to do so.",
     "description": "This text asks the user if they really want to open secret settings."
   }

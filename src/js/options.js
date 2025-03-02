@@ -25,16 +25,16 @@ indicator.addEventListener( 'click', () => {
   }
 })
 
-const urlParams = new URLSearchParams( document.location.search );
-const isSecretSettingsEnabled = urlParams.get( 'secretSettings' );
-if (
-  isSecretSettingsEnabled === 'true' &&
-  confirm( Utils.getLocalizedString( 'setting_secretSettingsConfirm' ) )
-) {
-  document.querySelectorAll( 'button.secretSetting' ).forEach( element => {
-    element.classList.toggle( '--hidden' );
-  })
-}
+const expert = document.querySelector( '#expert' );
+expert.addEventListener( 'click', () => {
+  if ( confirm( Utils.getLocalizedString( 'setting_expertConfirm' ) ) ) {
+    document.querySelectorAll( 'button.secretSetting' ).forEach( element => {
+      element.classList.toggle( '--hidden' );
+    })
+
+    expert.classList.add( '--hidden' );
+  }
+})
 
 const unrestrict = document.querySelector( '#unrestrict' );
 unrestrict.addEventListener( 'click', () => {
