@@ -74,6 +74,9 @@
   "setting_resetConfirm": {
     "message": "Dieser Schritt setzt alle Einstellungen zurück. Fortfahren?"
   },
+  "setting_standard": {
+    "message": "Standardmodus"
+  },
   "setting_expert": {
     "message": "Expertenmodus"
   },

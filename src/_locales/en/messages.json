@@ -99,6 +99,10 @@
     "message": "Are you sure you want to reset all settings? This action cannot be undone.",
     "description": "This text asks the user if they really want to delete all settings after pressing the reset button."
   },
+  "setting_standard": {
+    "message": "Standard Mode",
+    "description": "This text is for an action button on the settings page. It will hide the secret settings for experts."
+  },
   "setting_expert": {
     "message": "Expert Mode",
     "description": "This text is for an action button on the settings page. It will display the secret settings for experts."

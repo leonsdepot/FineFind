@@ -25,6 +25,11 @@ indicator.addEventListener( 'click', () => {
   }
 })
 
+const standard = document.querySelector( '#standard' );
+standard.addEventListener( 'click', () => {
+  window.location.reload();
+})
+
 const expert = document.querySelector( '#expert' );
 expert.addEventListener( 'click', () => {
   if ( confirm( Utils.getLocalizedString( 'setting_expertConfirm' ) ) ) {
