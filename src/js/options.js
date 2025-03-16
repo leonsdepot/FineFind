@@ -33,6 +33,8 @@ standard.addEventListener( 'click', () => {
 const expert = document.querySelector( '#expert' );
 expert.addEventListener( 'click', () => {
   if ( confirm( Utils.getLocalizedString( 'setting_expertConfirm' ) ) ) {
+    document.querySelector( '#actionButtons' ).classList.add( 'wrapFillBox' );
+
     document.querySelectorAll( 'button.secretSetting' ).forEach( element => {
       element.classList.toggle( '--hidden' );
     })
