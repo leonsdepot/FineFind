@@ -39,9 +39,9 @@ class Highlighter {
     this.animation.cancel();
   }
 
-  animate( milliseconds = 1000 ) {
+  animate( milliseconds = 1000, iterations = 1 ) {
     this.cancelAnimation();
-    this.animation.effect.updateTiming( { duration: milliseconds } );
+    this.animation.effect.updateTiming( { duration: milliseconds, iterations: iterations } );
     this.animation.play();
   }
 }
