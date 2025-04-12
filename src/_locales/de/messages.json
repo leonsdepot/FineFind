@@ -50,6 +50,9 @@
   "setting_highlighterDuration": {
     "message": "Animationszeit (ms)"
   },
+  "setting_highlighterRepeatCount": {
+    "message": "Wiederholungen"
+  },
   "setting_appearance": {
     "message": "Ansicht"
   },

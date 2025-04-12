@@ -67,6 +67,10 @@
     "message": "Animation Time (ms)",
     "description": "This is the text for an option label on the settings page. Users can set their preferred animation time for the ring animation."
   },
+  "setting_highlighterRepeatCount": {
+    "message": "Repeat Count",
+    "description": "This is the text for an option label on the settings page. Users can set how many times the animation should repeat."
+  },
   "setting_appearance": {
     "message": "Appearance",
     "description": "This is the title for a section on the settings page."

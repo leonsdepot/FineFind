@@ -57,7 +57,10 @@ const setupInPage = () => {
 const updateHighlighter = ( position ) => {
   highlighter.cancelAnimation();
   highlighter.moveTo( position.x, position.y );
-  highlighter.animate( settings.highlighterDuration.value );
+  highlighter.animate(
+    settings.highlighterDuration.value,
+    settings.highlighterRepeatCount.value
+  );
 }
 
 let isUserSelect = false;

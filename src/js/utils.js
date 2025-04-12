@@ -5,6 +5,7 @@ class Utils {
       showBannerOnFailure: { value: true },
       debounceTime: { value: 0 },
       highlighterDuration: { value: 1000 },
+      highlighterRepeatCount: { value: 1 },
       highlighterHueDegree: { value: 0 },
       highlighterBrightness: { value: 1 },
       highlighterSaturation: { value: 1 }
