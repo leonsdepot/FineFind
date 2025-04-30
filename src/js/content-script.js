@@ -54,15 +54,6 @@ const setupInPage = () => {
   })
 }
 
-const updateHighlighter = ( position ) => {
-  highlighter.cancelAnimation();
-  highlighter.moveTo( position.x, position.y );
-  highlighter.animate(
-    settings.highlighterDuration.value,
-    settings.highlighterRepeatCount.value
-  );
-}
-
 let isUserSelect = false;
 let inputDebouncer;
 
@@ -111,5 +102,12 @@ document.addEventListener( 'selectionchange', function handleSelection( e ) {
     return;
   }
 
-  inputDebouncer.schedule( () => { updateHighlighter( position ) } );
+  inputDebouncer.schedule( () => {
+    highlighter.animateAt(
+      position.x,
+      position.y,
+      settings.highlighterDuration.value,
+      settings.highlighterRepeatCount.value
+    );
+  });
 })

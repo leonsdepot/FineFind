@@ -44,4 +44,9 @@ class Highlighter {
     this.animation.effect.updateTiming( { duration: milliseconds, iterations: iterations } );
     this.animation.play();
   }
+
+  animateAt( x, y, milliseconds, iterations ) {
+    this.moveTo( x, y );
+    this.animate( milliseconds, iterations );
+  }
 }
