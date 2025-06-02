@@ -101,3 +101,6 @@
 - [How TO - Copy Text to Clipboard](https://www.w3schools.com/howto/howto_js_copy_clipboard.asp)
 - [Window: open() method](https://developer.mozilla.org/en-US/docs/Web/API/Window/open)
 - [animation-iteration-count](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-iteration-count)
+- [Document: hasFocus() method](https://developer.mozilla.org/en-US/docs/Web/API/Document/hasFocus)
+- [Element: pointerup event](https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerup_event)
+- [Element: pointerdown event](https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerdown_event)

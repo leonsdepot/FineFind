@@ -57,26 +57,18 @@ const setupInPage = () => {
 let isUserSelect = false;
 let inputDebouncer;
 
-document.addEventListener( 'focus', () => {
+document.addEventListener( 'pointerdown', () => {
   isUserSelect = true;
 })
 
-document.addEventListener( 'mousedown', () => {
-  isUserSelect = true;
-})
-
-document.addEventListener( 'keydown', () => {
-  isUserSelect = true;
-})
-
-document.addEventListener( 'blur', () => {
+document.addEventListener( 'pointerup', () => {
   isUserSelect = false;
 })
 
 document.addEventListener( 'selectionchange', function handleSelection( e ) {
   const selection = window.getSelection();
 
-  if ( isUserSelect || isEmpty( selection ) ) {
+  if ( document.hasFocus() || isUserSelect || isEmpty( selection ) ) {
     return;
   }
   else if ( ! document.body.contains( shadowHost ) ) {
