@@ -16,7 +16,7 @@ This extension is currently compatible with Firefox only. Some Firefox-based bro
 
 #### 🌐 ❌
 
-Chrome and Chromium-based browsers are currently incompatible with the method FineFind uses to detect search results. If you discover a workaround, we encourage you to share it with us.
+Chrome and Chromium-based browsers are currently incompatible with the method FineFind uses to detect search results. If you discover a workaround, we encourage you to share it with us. [Read more](https://github.com/leonsdepot/FineFind/wiki)
 
 ## How it works
 
@@ -37,7 +37,7 @@ Your feedback is invaluable, especially for a project like FineFind, which is st
 
 Please submit any issues or feature requests through the projects issue tracker.
 
-( If you prefer to communicate privately, you can reach out via direct message on [Nexus Mods](https://www.nexusmods.com/users/96969738) 😉 )
+( If you prefer to communicate privately, you can reach out via direct message on [Nexus Mods](https://www.nexusmods.com/users/96969738) 😀)
 
 ## Credits
 - I am delighted that some people helped me with the translation to make the extension understandable for everyone. I would like to thank [NikoTheFox](https://github.com/RandomWolf) (English) and [Vinicius Vechio Berger](https://next.nexusmods.com/profile/Vechio/about-me) (Portuguese)
