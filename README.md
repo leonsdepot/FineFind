@@ -7,7 +7,7 @@
 <p align="center">Enhances your browser with an animation that makes Ctrl + F results more noticeable!</p>
 <p align="center">🛠 This WebExtension is currently in beta 🛠</p>
 
-<a href="https://addons.mozilla.org/firefox/addon/finefind/"><img src="https://github.com/user-attachments/assets/85ed40fd-3f2c-4dbe-a9e7-8b96406d6515" alt="Banner"></a>
+<a href="https://addons.mozilla.org/firefox/addon/finefind/?utm_source=github-finefind"><img src="https://github.com/user-attachments/assets/85ed40fd-3f2c-4dbe-a9e7-8b96406d6515" alt="Banner"></a>
 ## Compatibility
 
 #### 🦊🔥 ✔
