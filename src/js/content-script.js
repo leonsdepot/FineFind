@@ -55,6 +55,7 @@ const setupInPage = () => {
 }
 
 let isUserSelect = false;
+let isEnvironmentReady = true;
 let inputDebouncer;
 
 document.addEventListener( 'pointerdown', () => {
@@ -65,19 +66,20 @@ document.addEventListener( 'pointerup', () => {
   isUserSelect = false;
 })
 
-document.addEventListener( 'selectionchange', function handleSelection( e ) {
+document.addEventListener( 'selectionchange', async ( e ) => {
   const selection = window.getSelection();
 
-  if ( document.hasFocus() || isUserSelect || isEmpty( selection ) ) {
+  if ( document.hasFocus() || isUserSelect || isEmpty( selection ) || ! isEnvironmentReady ) {
     return;
   }
   else if ( ! document.body.contains( shadowHost ) ) {
-    setupInPage().then( () => {
-      inputDebouncer = new DynamicDebouncer( settings.debounceTime.value );
+    isEnvironmentReady = false;
 
-      handleSelection( e );
-    })
-    return;
+    await setupInPage();
+
+    inputDebouncer = new DynamicDebouncer( settings.debounceTime.value );
+
+    isEnvironmentReady = true;
   }
 
   const position = getRangePosition( selection.getRangeAt( 0 ) );
