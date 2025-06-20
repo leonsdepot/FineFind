@@ -66,7 +66,7 @@ document.addEventListener( 'pointerup', () => {
   isUserSelect = false;
 })
 
-document.addEventListener( 'selectionchange', async ( e ) => {
+document.addEventListener( 'selectionchange', async () => {
   const selection = window.getSelection();
 
   if ( document.hasFocus() || isUserSelect || isEmpty( selection ) || ! isEnvironmentReady ) {
@@ -90,9 +90,6 @@ document.addEventListener( 'selectionchange', async ( e ) => {
       null,
       settings.showBannerOnFailure.value
     );
-    return;
-  }
-  else if ( e.target.nodeName == 'TEXTAREA' ) {
     return;
   }
 
