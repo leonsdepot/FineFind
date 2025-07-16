@@ -105,3 +105,5 @@
 - [Element: pointerup event](https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerup_event)
 - [Element: pointerdown event](https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerdown_event)
 - [Optional chaining (?.)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)*
+- [Nullish coalescing operator (??)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)*
+- [Node: isConnected property](https://developer.mozilla.org/en-US/docs/Web/API/Node/isConnected)*

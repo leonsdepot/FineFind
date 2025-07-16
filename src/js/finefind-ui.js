@@ -46,7 +46,7 @@ class FineFindUI {
   }
 
   isAttached() {
-    return document.body.contains( this.#shadowHost );
+    return this.#shadowHost?.isConnected ?? false;
   }
 
   showSuccess( text, subText = false ) {
