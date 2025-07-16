@@ -104,3 +104,4 @@
 - [Document: hasFocus() method](https://developer.mozilla.org/en-US/docs/Web/API/Document/hasFocus)
 - [Element: pointerup event](https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerup_event)
 - [Element: pointerdown event](https://developer.mozilla.org/en-US/docs/Web/API/Element/pointerdown_event)
+- [Optional chaining (?.)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)*

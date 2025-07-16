@@ -28,7 +28,7 @@
       "matches": ["*://*/*"],
       "all_frames": true,
       "match_origin_as_fallback": true,
-      "js": ["js/utils.js", "js/highlighter.js", "js/notifier.js", "js/debouncer.js", "js/content-script.js"],
+      "js": ["js/utils.js", "js/highlighter.js", "js/notifier.js", "js/debouncer.js", "js/finefind-ui.js", "js/content-script.js"],
       "css": ["css/highlighter.css", "css/notifier.css"]
     }
   ],
