@@ -69,6 +69,14 @@ class FineFindUI {
     );
   }
 
+  showWelcome( text, subText = false ) {
+    this.#notifier.show(
+      text,
+      subText,
+      this.#settings.showBannerOnActivation.value && window.self === window.top
+    );
+  }
+
   highlightAt( x, y ) {
     this.#inputDebouncer.schedule( () => {
       this.#highlighter.animateAt(

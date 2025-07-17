@@ -40,10 +40,7 @@ document.addEventListener( 'selectionchange', async () => {
     settings = await Utils.restoreOptions();
     finefindUI = new FineFindUI( settings );
     finefindUI.attachTo(document.body);
-
-    if ( settings.showBannerOnActivation.value && window.self === window.top ) {
-      finefindUI.showInfo( Utils.getLocalizedString( 'isActiveReminder' ) );
-    }
+    finefindUI.showWelcome( Utils.getLocalizedString( 'isActiveReminder' ) );
 
     isEnvironmentReady = true;
   }
