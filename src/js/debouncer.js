@@ -1,6 +1,7 @@
 class DynamicDebouncer {
-  constructor( milliseconds ) {
+  constructor( milliseconds, isPreCooldownInstant = true ) {
     this.cooldown = milliseconds;
+    this.isPreCooldownInstant = isPreCooldownInstant;
     this.lastTriggerTime = 0;
     this.timeoutID = null;
   }
@@ -13,7 +14,7 @@ class DynamicDebouncer {
       this.timeoutID = null;
     }
 
-    if ( time > this.lastTriggerTime + this.cooldown ) {
+    if ( this.isPreCooldownInstant && time > this.lastTriggerTime + this.cooldown ) {
       callback();
     }
     else {

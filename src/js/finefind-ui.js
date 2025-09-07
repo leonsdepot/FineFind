@@ -4,7 +4,8 @@ class FineFindUI {
   #highlighter;
   #notifier;
   #inputDebouncer;
-  
+  #cleanupDebouncer;
+
   constructor( settings ) {
     this.#settings = settings;
 
@@ -18,6 +19,8 @@ class FineFindUI {
     this.#notifier = new Notifier( Utils.getInternalURL( 'img/logo.svg' ) );
 
     this.#inputDebouncer = new DynamicDebouncer( this.#settings.debounceTime.value );
+
+    this.#cleanupDebouncer = new DynamicDebouncer( 6000, false );
   }
 
   #createShadowHost( elements ) {
@@ -86,5 +89,7 @@ class FineFindUI {
         this.#settings.highlighterRepeatCount.value
       );
     });
+
+    this.#cleanupDebouncer.schedule( () => this.#shadowHost?.remove() );
   }
 }
