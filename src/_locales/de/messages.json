@@ -17,6 +17,15 @@
   "error_rangeOutsideDoc": {
     "message": "Ergebnis ist außerhalb der Seite!"
   },
+  "setting_limitationsHint": {
+    "message": "Es gilt zu beachten, dass dieses Addon auf bestimmten Firefox internen Seiten, wie z.B. addons.mozilla.org oder diese Seite hier selbst, aufgrund von Sicherheitsrichtlinien des Browsers nicht verwendet werden kann."
+  },
+  "setting_demo": {
+    "message": "🧪 Bereich zum Ausprobieren"
+  },
+  "setting_limitationsReadMore": {
+    "message": "👓 Mehr zum Thema"
+  },
   "setting_thanks": {
     "message": "Danke für die Nutzung von FineFind!"
   },

@@ -1,4 +1,5 @@
 # Sources
+
 ## Icons
 - logo.svg: FineFind / LeonsDepot
 - ring.svg: FineFind / LeonsDepot
@@ -107,3 +108,6 @@
 - [Optional chaining (?.)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Optional_chaining)*
 - [Nullish coalescing operator (??)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing)*
 - [Node: isConnected property](https://developer.mozilla.org/en-US/docs/Web/API/Node/isConnected)*
+- [color (currentColor)](https://developer.mozilla.org/de/docs/Web/SVG/Reference/Attribute/color)*
+- [min()](https://developer.mozilla.org/de/docs/Web/CSS/min)*
+- [CSS line-height Property](https://www.w3schools.com/cssref/pr_dim_line-height.php)

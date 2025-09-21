@@ -10,6 +10,9 @@
   --black: #23222b;
   --light-gray: lightgray;
   --dark-gray: #bdb9b9;
+  --finefind: #38d878;
+  --red: #cf222e;
+  --yellow: #e4b600;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -44,6 +47,7 @@ body {
   padding-bottom: 0.4rem;
   background-color: var(--bg-color);
   color: var(--color);
+  line-height: 1.6;
   font-family: sans-serif;
   overflow-wrap: anywhere;
   font-size: 1rem;
@@ -102,10 +106,14 @@ button, .button {
   border: 0.1rem solid var(--bg-color-contrast);
   border-radius: 0.2rem;
   background-color: var(--bg-color);
-  color: var(--bg-color-contrast);
+  color: var(--bg-color-contrast) !important;
   text-decoration: none;
   text-align: center;
+  transition: 0.4s;
 }
+button.--tip, .button.--tip { border-color: var(--finefind); }
+button.--note, .button.--note { border-color: var(--blue); }
+button.--warning, .button.--warning { border-color: var(--yellow); }
 
 button.--hidden, .button.--hidden {
   display: none;
@@ -118,14 +126,14 @@ button.--warn, .button.--warn {
 button:hover, .button:hover {
   background-color: var(--light-gray);
   border-color: var(--black);
-  color: var(--black);
+  color: var(--black) !important;
   transition: 0.6s;
 }
 
 button:active, .button:active {
   background-color: var(--dark-gray);
   border-color: var(--black);
-  color: var(--black);
+  color: var(--black) !important;
   transition: 0s;
 }
 
@@ -136,10 +144,20 @@ h2 { font-size: 1.1rem; font-weight: bold; }
   display: flex;
   flex-direction: column;
   padding: 1rem;
-  background-color: var(--blue);
+  border: 0.1rem solid var(--light-gray);
+  background-color: var(--light-gray);
   border-radius: 0.33rem;
-  color: var(--white);
   gap: 1rem;
+}
+.banner.--tip { border-color: var(--finefind); }
+.banner.--note { border-color: var(--blue); background-color: var(--blue); }
+.banner.--warning { border-color: var(--yellow); background-color: var(--yellow); }
+.banner.--warning * { color: var(--color-contrast); }
+
+.gridBox {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(8rem, 100%), 1fr));
+  gap: 0.8rem;
 }
 
 .bubbleBox {
@@ -154,6 +172,28 @@ h2 { font-size: 1.1rem; font-weight: bold; }
   padding: 1rem 0.6rem;
   border: none;
   border-radius: 2rem;
+}
+
+.svgAndText {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
+  flex-wrap: wrap;
+  min-width: 7rem;
+  justify-content: center;
+}
+
+.svgAndText > svg:first-child {
+  flex: 0 0 auto;
+  height: 3.2rem;
+  width: 3.2rem;
+}
+
+.svgAndText > p {
+  flex: 1 1 2rem;
+  overflow-wrap: anywhere;
+  min-width: 0;
+  text-align: left;
 }
 
 .previewBox {
