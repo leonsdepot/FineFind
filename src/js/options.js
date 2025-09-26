@@ -4,6 +4,12 @@ document.querySelectorAll( 'form' ).forEach( form => {
   })
 })
 
+document.querySelectorAll( '.closeAction' ).forEach( element => {
+  element.addEventListener( 'click', () => {
+    element.parentNode.remove();
+  })
+})
+
 document.querySelectorAll( '[data-i18n]' ).forEach( element => {
   const key = element.getAttribute( 'data-i18n' );
 

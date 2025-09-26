@@ -123,6 +123,20 @@ button.--warn, .button.--warn {
   border-color: darkorange;
 }
 
+button.--icon, .button.--icon {
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: transparent;
+  border-color: transparent;
+  padding: 0.3rem;
+}
+
+button.--icon > *, .button.--icon > * {
+  height: 100%;
+  width: 100%;
+}
+
 button:hover, .button:hover {
   background-color: var(--light-gray);
   border-color: var(--black);
@@ -135,6 +149,15 @@ button:active, .button:active {
   border-color: var(--black);
   color: var(--black) !important;
   transition: 0s;
+}
+
+button.buttonContainerAction,
+.button.buttonContainerAction {
+  height: 1.7rem;
+  width: 1.7rem;
+  top: 1.01rem;
+  right: 0.31rem;
+  position: absolute;
 }
 
 h1 { font-size: 1.2rem }

@@ -23,6 +23,10 @@
     "message": "Result is off page!",
     "description": "This is related to a problem when the selection is outside the page and therefore invisible."
   },
+  "setting_close": {
+    "message": "Close",
+    "description": "Text for removing an object."
+  },
   "setting_limitationsHint": {
     "message": "Please keep in mind that this extension does not work on certain websites. Examples include addons.mozilla.org and addon configuration sites like this. This is due to Firefox-internal restrictions for your safety.",
     "description": "This is the text of the limitations notice."

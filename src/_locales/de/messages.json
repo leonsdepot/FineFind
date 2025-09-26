@@ -17,6 +17,9 @@
   "error_rangeOutsideDoc": {
     "message": "Ergebnis ist außerhalb der Seite!"
   },
+  "setting_close": {
+    "message": "Schlie­ßen"
+  },
   "setting_limitationsHint": {
     "message": "Es gilt zu beachten, dass dieses Addon auf bestimmten Firefox internen Seiten, wie z.B. addons.mozilla.org oder diese Seite hier selbst, aufgrund von Sicherheitsrichtlinien des Browsers nicht verwendet werden kann."
   },
