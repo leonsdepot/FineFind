@@ -106,7 +106,7 @@ button, .button {
   border: 0.1rem solid var(--bg-color-contrast);
   border-radius: 0.2rem;
   background-color: var(--bg-color);
-  color: var(--bg-color-contrast) !important;
+  color: var(--bg-color-contrast);
   text-decoration: none;
   text-align: center;
   transition: 0.4s;
@@ -127,6 +127,7 @@ button.--icon, .button.--icon {
   justify-content: center;
   align-items: center;
   border-radius: 50%;
+  color: inherit;
   background-color: transparent;
   border-color: transparent;
   padding: 0.3rem;
@@ -139,15 +140,14 @@ button.--icon > *, .button.--icon > * {
 
 button:hover, .button:hover {
   background-color: var(--light-gray);
-  border-color: var(--black);
-  color: var(--black) !important;
+  color: var(--black);
   transition: 0.6s;
 }
 
 button:active, .button:active {
   background-color: var(--dark-gray);
   border-color: var(--black);
-  color: var(--black) !important;
+  color: var(--black);
   transition: 0s;
 }
 
@@ -171,11 +171,11 @@ h2 { font-size: 1.1rem; font-weight: bold; }
   background-color: var(--light-gray);
   border-radius: 0.33rem;
   gap: 1rem;
+  color: var(--black);
 }
-.banner.--tip { border-color: var(--finefind); }
-.banner.--note { border-color: var(--blue); background-color: var(--blue); }
+.banner.--tip { border-color: var(--finefind); background-color: var(--finefind); }
+.banner.--note { border-color: var(--blue); background-color: var(--blue); color: var(--white); }
 .banner.--warning { border-color: var(--yellow); background-color: var(--yellow); }
-.banner.--warning * { color: var(--color-contrast); }
 
 .gridBox {
   display: grid;
