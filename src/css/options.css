@@ -115,10 +115,6 @@ button.--tip, .button.--tip { border-color: var(--finefind); }
 button.--note, .button.--note { border-color: var(--blue); }
 button.--warning, .button.--warning { border-color: var(--yellow); }
 
-button.--hidden, .button.--hidden {
-  display: none;
-}
-
 button.--warn, .button.--warn {
   border-color: darkorange;
 }
@@ -232,6 +228,10 @@ h2 { font-size: 1.1rem; font-weight: bold; }
 
 .wrapFillBox > * {
   flex: 1;
+}
+
+.--hidden {
+  display: none;
 }
 
 #actionButtons {

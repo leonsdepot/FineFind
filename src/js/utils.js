@@ -8,7 +8,8 @@ class Utils {
       highlighterRepeatCount: { value: 1 },
       highlighterHueDegree: { value: 0 },
       highlighterBrightness: { value: 1 },
-      highlighterSaturation: { value: 1 }
+      highlighterSaturation: { value: 1 },
+      dismissedElementIds: { value: [] }
     }
   }
 
