@@ -24,8 +24,7 @@
     "storage"
   ],
   "background": {
-    "scripts": ["js/background-script.js"],
-    "type": "module"
+    "scripts": ["js/background-script.js"]
   },
   "content_scripts": [
     {
