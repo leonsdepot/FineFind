@@ -34,7 +34,7 @@ document.addEventListener( 'selectionchange', async () => {
   if ( document.hasFocus() || isUserSelect || isEmpty( selection ) || ! isEnvironmentReady ) {
     return;
   }
-  else if ( ! finefindUI?.isAttached() ) {
+  else if ( ! finefindUI ) {
     isEnvironmentReady = false;
 
     settings = await Utils.restoreOptions();
@@ -43,6 +43,9 @@ document.addEventListener( 'selectionchange', async () => {
     finefindUI.showWelcome( Utils.getLocalizedString( 'isActiveReminder' ) );
 
     isEnvironmentReady = true;
+  }
+  else if ( ! finefindUI?.isAttached() ) {
+    finefindUI.attachTo(document.body);
   }
 
   const position = getRangePosition( selection.getRangeAt( 0 ) );
