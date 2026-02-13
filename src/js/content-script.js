@@ -29,6 +29,10 @@ document.addEventListener( 'pointerup', () => {
 })
 
 document.addEventListener( 'selectionchange', async () => {
+  // Workaround for delayed viewport updates that can
+  // make FineFind misdetect results as off-page (likely race condition).
+  await new Promise(t => setTimeout(t, 0));
+
   const selection = window.getSelection();
 
   if ( document.hasFocus() || isUserSelect || isEmpty( selection ) || ! isEnvironmentReady ) {
