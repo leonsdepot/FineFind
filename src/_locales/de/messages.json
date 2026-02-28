@@ -62,6 +62,9 @@
   "setting_debounceTime": {
     "message": "Abklingzeit beim Tippen (ms)"
   },
+  "setting_startDelay": {
+    "message": "Startverzögerung (ms)"
+  },
   "setting_highlighterDuration": {
     "message": "Animationszeit (ms)"
   },

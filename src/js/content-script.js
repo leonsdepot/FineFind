@@ -18,7 +18,7 @@ const isPositionOutsideDoc = ( x, y ) => {
 let settings;
 let finefindUI;
 let isUserSelect = false;
-let isEnvironmentReady = true;
+let eventId = 0;
 
 document.addEventListener( 'pointerdown', () => {
   isUserSelect = true;
@@ -29,24 +29,25 @@ document.addEventListener( 'pointerup', () => {
 })
 
 document.addEventListener( 'selectionchange', async () => {
+  const currentId = eventId + 1;
+  eventId = currentId;
+
+  if ( ! settings )
+    settings = await Utils.restoreOptions();
+
   // Workaround for delayed viewport updates that can
   // make FineFind misdetect results as off-page (likely race condition).
-  await new Promise(t => setTimeout(t, 0));
+  await new Promise( t => setTimeout( t, settings.startDelay.value ) );
 
   const selection = window.getSelection();
 
-  if ( document.hasFocus() || isUserSelect || isEmpty( selection ) || ! isEnvironmentReady ) {
+  if ( document.hasFocus() || isUserSelect || isEmpty( selection ) || eventId != currentId ) {
     return;
   }
   else if ( ! finefindUI ) {
-    isEnvironmentReady = false;
-
-    settings = await Utils.restoreOptions();
     finefindUI = new FineFindUI( settings );
     finefindUI.attachTo(document.body);
     finefindUI.showWelcome( Utils.getLocalizedString( 'isActiveReminder' ) );
-
-    isEnvironmentReady = true;
   }
   else if ( ! finefindUI?.isAttached() ) {
     finefindUI.attachTo(document.body);

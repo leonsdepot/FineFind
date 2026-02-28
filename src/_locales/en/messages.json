@@ -83,6 +83,10 @@
     "message": "Typing delay (ms)",
     "description": "This is the text for an option label on the settings page. The user can set the cooldown time in milliseconds between key presses. This prevents FineFind from showing its animation while typing."
   },
+  "setting_startDelay": {
+    "message": "Start delay (ms)",
+    "description": "This is the text for an option label on the settings page. The user can set a start delay as a cooldown between each run. This delay is always respected before the animation starts, unlike 'debounceTime', which only adds a cooldown if the previous run was too recent."
+  },
   "setting_highlighterDuration": {
     "message": "Animation Time (ms)",
     "description": "This is the text for an option label on the settings page. Users can set their preferred animation time for the ring animation."

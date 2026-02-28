@@ -35,7 +35,7 @@ expert.addEventListener( 'click', () => {
   if ( confirm( Utils.getLocalizedString( 'setting_expertConfirm' ) ) ) {
     document.querySelector( '#actionButtons' ).classList.add( 'wrapFillBox' );
 
-    document.querySelectorAll( 'button.secretSetting' ).forEach( element => {
+    document.querySelectorAll( '.secretSetting' ).forEach( element => {
       element.classList.toggle( '--hidden' );
     })
 
