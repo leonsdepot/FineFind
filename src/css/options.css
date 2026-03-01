@@ -76,6 +76,13 @@ form > div.rangeAndValue > output {
 label {
   align-self: center;
 }
+label.--tip, label.--note, label.--warning {
+  font-style: oblique;
+  text-decoration: underline solid 0.1rem;
+}
+label.--tip { text-decoration-color: var(--finefind); }
+label.--note { text-decoration-color: var(--blue); }
+label.--warning { text-decoration-color: darkorange; }
 
 input {
   height: 1.4rem;
