@@ -33,13 +33,13 @@ standard.addEventListener( 'click', () => {
 const expert = document.querySelector( '#expert' );
 expert.addEventListener( 'click', () => {
   if ( confirm( Utils.getLocalizedString( 'setting_expertConfirm' ) ) ) {
-    document.querySelector( '#actionButtons' ).classList.add( 'wrapFillBox' );
+    document.querySelector( '#actionButtons' ).classList.add( 'fillBox' );
 
     document.querySelectorAll( '.secretSetting' ).forEach( element => {
-      element.classList.toggle( '--hidden' );
+      element.classList.toggle( 'is-hidden' );
     })
 
-    expert.classList.add( '--hidden' );
+    expert.classList.add( 'is-hidden' );
   }
 })
 
@@ -63,7 +63,7 @@ Utils.restoreOptions()
 .then( storageSettings => {
   document.querySelectorAll( '.closeAction' ).forEach( element => {
     if ( ! storageSettings.dismissedElementIds.value.includes( element.id ) ) {
-      element.parentNode.classList.remove( '--hidden' );
+      element.parentNode.classList.remove( 'is-hidden' );
     }
 
     element.addEventListener( 'click', () => {
@@ -71,7 +71,7 @@ Utils.restoreOptions()
 
       Utils.saveOptions( storageSettings );
 
-      element.parentElement.classList.add( '--hidden' );
+      element.parentElement.classList.add( 'is-hidden' );
     })
   })
 
