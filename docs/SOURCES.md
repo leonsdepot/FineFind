@@ -112,3 +112,4 @@
 - [min()](https://developer.mozilla.org/de/docs/Web/CSS/min)*
 - [CSS line-height Property](https://www.w3schools.com/cssref/pr_dim_line-height.php)
 - [Wait 5 seconds before executing next line](https://stackoverflow.com/a/47480429)
+- [How to show CSS transitions only on hover?](https://stackoverflow.com/questions/20969099/how-to-show-css-transitions-only-on-hover)
