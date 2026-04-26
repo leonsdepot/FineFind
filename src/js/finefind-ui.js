@@ -39,7 +39,7 @@ class FineFindUI {
     const shadowHost = this.#createShadowHost(
       [
         this.#highlighter.getElement(),
-        this.#notifier.getElement()
+        this.#notifier.element
       ]
     );
 
