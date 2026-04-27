@@ -25,7 +25,6 @@ class KeyframeFX {
 class AnimationFX {
   #keyframeFXs;
   #currentAnimations = [];
-  #durationShares = new Map();
   #duration = 0;
 
   get duration() {
@@ -36,13 +35,14 @@ class AnimationFX {
     if ( this.#duration == duration )
       return;
 
+    const oldDuration = this.#duration;
     this.#duration = duration;
 
     this.#keyframeFXs.forEach( v => {
-      const durationShare = this.#durationShares.get( v );
+      if ( ! v?.options?.duration )
+        return;
 
-      if ( durationShare )
-        v.options.duration = durationShare * duration;
+      v.options.duration = ( v.options.duration / oldDuration ) * this.#duration;
     });
   }
 
@@ -52,15 +52,6 @@ class AnimationFX {
     keyframeFXs.forEach( v => {
       if ( v.options.duration )
         this.#duration += v.options.duration;
-    });
-
-    keyframeFXs.forEach( v => {
-      if ( v.options.duration ) {
-        this.#durationShares.set(
-          v,
-          ( v.options.duration / this.#duration )
-        );
-      }
     });
   }
 
