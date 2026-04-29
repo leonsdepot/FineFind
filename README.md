@@ -1,13 +1,13 @@
 <h1 align="center">
   <sub>
-    <img src="https://github.com/user-attachments/assets/5e86806a-09ed-4305-a7e1-b483495098a8" alt="Logo" height="38" width="38">
+    <img src="https://codeberg.org/LeonsDepot/.files/raw/branch/main/finefind/img/finefind_logo_v1.svg" alt="Logo" height="38" width="38">
   </sub>
   FineFind
 </h1>
 <p align="center">Enhances your browser with an animation that makes Ctrl + F results more noticeable!</p>
 <p align="center">🛠 This WebExtension is currently in beta 🛠</p>
 
-<a href="https://addons.mozilla.org/firefox/addon/finefind/?utm_source=github-finefind"><img src="https://github.com/user-attachments/assets/85ed40fd-3f2c-4dbe-a9e7-8b96406d6515" alt="Banner"></a>
+<a href="https://addons.mozilla.org/firefox/addon/finefind/?utm_source=github-or-codeberg"><img src="https://codeberg.org/LeonsDepot/.files/raw/branch/main/finefind/img/finefind-banner.png" alt="Banner"></a>
 ## Compatibility
 
 #### 🦊🔥 ✔
@@ -16,7 +16,7 @@ This extension is currently compatible with Firefox only. Some Firefox-based bro
 
 #### 🌐 ❌
 
-Chrome and Chromium-based browsers are currently incompatible with the method FineFind uses to detect search results. If you discover a workaround, we encourage you to share it with us. [Read more](https://github.com/leonsdepot/FineFind/wiki)
+Chrome and Chromium-based browsers are currently incompatible with the method FineFind uses to detect search results. If you discover a workaround, we encourage you to share it with us. [Read more](https://codeberg.org/LeonsDepot/FineFind/wiki/Limitations)
 
 ## How it works
 
@@ -29,7 +29,7 @@ You can further customize your experience via the FineFind options page.
 
 #### ✨ Preview
 
-![StickAround](https://github.com/user-attachments/assets/0c1a470d-385d-42ff-9e3f-6ad1275292c2)
+![finefind-preview](https://codeberg.org/LeonsDepot/.files/raw/branch/main/finefind/img/finefind-preview.gif)
 
 ## Contribution
 

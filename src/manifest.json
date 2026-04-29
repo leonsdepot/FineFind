@@ -4,7 +4,7 @@
   "version": "0.7.0",
   "description": "__MSG_extensionDescription__",
   "author": "LeonsDepot (Leon Watermann)",
-  "homepage_url": "https://github.com/leonsdepot/FineFind",
+  "homepage_url": "https://codeberg.org/LeonsDepot/FineFind",
   "icons": {
     "48": "img/logo.svg",
     "96": "img/logo.svg"
